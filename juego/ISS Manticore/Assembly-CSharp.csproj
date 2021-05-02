@@ -36,23 +36,23 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_PlayerMovement.cs" />
-     <Compile Include="Assets\Simple FPS Controller\Scripts\Wall Run\SFPSC_WallRun.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_KeyManager.cs" />
-     <Compile Include="Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_GrapplingHook.cs" />
-     <Compile Include="Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_Rope.cs" />
-     <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
-     <Compile Include="Assets\Unity UI Samples\Scripts\DropMe.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ResizePanel.cs" />
-     <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
-     <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
-     <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
+     <Compile Include="Assets\Unity UI Samples\Scripts\DragPanel.cs" />
+     <Compile Include="Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_Rope.cs" />
+     <Compile Include="Assets\Simple FPS Controller\Scripts\Wall Run\SFPSC_WallRun.cs" />
+     <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_PlayerMovement.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\PanelManager.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
-     <Compile Include="Assets\Unity UI Samples\Scripts\DragPanel.cs" />
+     <Compile Include="Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_GrapplingHook.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
+     <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
+     <Compile Include="Assets\Unity UI Samples\Scripts\DropMe.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
+     <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
+     <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
+     <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
      <None Include="Assets\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
      <None Include="Assets\Simple FPS Controller\Materials\Shaders\Unlit_Texture_Color.shader" />
@@ -288,11 +288,29 @@
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>D:/unity/2021.1.3f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Abstractions">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.ml-agents@1.0.7/Plugins/System.IO.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.burst@1.4.1/Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.barracuda@1.0.4/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="MiscUtil">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Abstractions.TestingHelpers">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.ml-agents@1.0.7/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.ml-agents@1.0.7/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.ml-agents@1.0.7/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>D:/unity/2021.1.3f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -639,8 +657,17 @@
     <Reference Include="System.Xml.Serialization">
         <HintPath>D:/unity/2021.1.3f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ML-Agents">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.ML-Agents.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Barracuda.iOSBLAS">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Barracuda.BurstBLAS">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
@@ -651,8 +678,11 @@
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    <Reference Include="Unity.Barracuda">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
@@ -666,11 +696,17 @@
     <Reference Include="Unity.VisualScripting.State.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Editor">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="VSSettingsProvider">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/VSSettingsProvider.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
+    <Reference Include="Unity.ProBuilder">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
@@ -678,14 +714,50 @@
     <Reference Include="Unity.Rider.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Polybrush.Editor">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Polybrush.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Polybrush">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Polybrush.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ML-Agents.CommunicatorObjects">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Barracuda.Editor">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Barracuda.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Barracuda.MacBLAS">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
+    <Reference Include="Unity.ML-Agents.Editor">
+        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.ML-Agents.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

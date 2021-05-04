@@ -7,6 +7,9 @@ Library\Bee\artifacts\movedfrom\UnityEditor.TestRunner.ref.dll_18191076894890228
 Library\Bee\artifacts\movedfrom\UnityEditor.UI.ref.dll_5519394401220875509.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.TestRunner.ref.dll_16527383234446630302.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEngine.UI.ref.dll_648142665722821984.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Analytics.StandardEvents.dll_2276067068554394739.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Analytics.Editor.dll_11532405012547127511.movedfrom
+Library\Bee\artifacts\movedfrom\Unity.Analytics.Tracker.dll_13013317004982177258.movedfrom
 Library\Bee\artifacts\movedfrom\Unity.Burst.Unsafe.dll_17602304277410846273.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.Graphs.dll_10328839507812012502.movedfrom
 Library\Bee\artifacts\movedfrom\UnityEditor.CoreModule.dll_10311437483892927396.movedfrom

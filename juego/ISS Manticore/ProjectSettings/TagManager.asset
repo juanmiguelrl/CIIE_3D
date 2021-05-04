@@ -8,17 +8,17 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - gancho
   - Water
   - UI
-  - gancho
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PostProcessing
+  - Weapon
+  - Target
+  - Projectile
+  - Player
+  - PlayerCollisionOnly
   - 
   - 
   - 

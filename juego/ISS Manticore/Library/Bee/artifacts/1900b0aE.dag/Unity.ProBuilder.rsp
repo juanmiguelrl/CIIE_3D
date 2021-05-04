@@ -106,9 +106,13 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
+-define:UNITY_POST_PROCESSING_STACK_V2
 -define:USING_PARTICLE_SYSTEM
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.analytics@3.5.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
+-r:"D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Editor.dll"
+-r:"D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Tracker.dll"
 -r:"D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.barracuda@1.0.4/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll"
 -r:"D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.burst@1.4.1/Unity.Burst.Unsafe.dll"
 -r:"D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.ml-agents@1.0.7/Plugins/ProtoBuffer/Grpc.Core.dll"

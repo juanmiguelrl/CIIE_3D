@@ -404,6 +404,7 @@
 "Assets/Creator Kit - FPS/Scripts/UI/PauseMenu.cs"
 "Assets/Creator Kit - FPS/Scripts/UI/RestartLevel.cs"
 "Assets/Creator Kit - FPS/Scripts/UI/WeaponInfoUI.cs"
+"Assets/Scripts_propios/gancho.cs"
 "Assets/Simple FPS Controller/Scripts/Grappling Hook/SFPSC_GrapplingHook.cs"
 "Assets/Simple FPS Controller/Scripts/Grappling Hook/SFPSC_Rope.cs"
 "Assets/Simple FPS Controller/Scripts/SFPSC_FPSCamera.cs"

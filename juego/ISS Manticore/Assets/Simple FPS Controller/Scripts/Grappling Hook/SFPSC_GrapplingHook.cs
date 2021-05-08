@@ -167,7 +167,7 @@ public class SFPSC_GrapplingHook : MonoBehaviour
     {
         if (location == null)
             return;
-        
+        Debug.Log("Actualizando grapple");
         targetDistance = Vector3.Distance(transform.position, location.position);
         rope.segments = (int)((targetDistance / maxGrappleDistance) * segments);
         dir = (location.position - transform.position).normalized;

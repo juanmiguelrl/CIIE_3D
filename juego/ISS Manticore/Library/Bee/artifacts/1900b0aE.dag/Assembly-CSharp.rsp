@@ -361,6 +361,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
+"Assets/ChangeScene.cs"
 "Assets/Creator Kit - FPS/Scripts/Audio/RandomPlayer.cs"
 "Assets/Creator Kit - FPS/Scripts/Audio/UIAudioPlayer.cs"
 "Assets/Creator Kit - FPS/Scripts/Audio/WorldAudioPool.cs"

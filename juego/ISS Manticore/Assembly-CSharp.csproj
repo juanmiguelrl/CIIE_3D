@@ -100,6 +100,7 @@
      <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
      <Compile Include="Assets\Scripts_propios\Spawner.cs" />
      <Compile Include="Assets\Spawn.cs" />
+     <Compile Include="Assets\ChangeScene.cs" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Acid.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Brain.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Fleisch.shader" />

@@ -9,6 +9,7 @@ public class Repair_zone : MonoBehaviour
     public float repair_level = 0;
     public string nombre_objeto_a_colisionar;
     public bool en_la_zona = false;
+    public bool repaired = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +19,12 @@ public class Repair_zone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (en_la_zona) {
+        if (en_la_zona && (repair_level < 100)) {
             repair_level += Time.deltaTime * repair_rate;
         } 
+        if(repair_level >= 100) {
+            repaired = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other) {

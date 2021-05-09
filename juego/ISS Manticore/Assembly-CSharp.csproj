@@ -59,6 +59,7 @@
      <Compile Include="Assets\Creator Kit - FPS\Scripts\KeyLockSystem\Key.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\DropMe.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\LiquidAmmoDisplay.cs" />
+     <Compile Include="Assets\Scripts_propios\gancho.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Audio\RandomPlayer.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\GameAction.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\MovingAction.cs" />
@@ -97,7 +98,8 @@
      <Compile Include="Assets\Creator Kit - FPS\Scripts\LevelLayout\LevelLayout.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
-     <Compile Include="Assets\Scripts_propios\gancho.cs" />
+     <Compile Include="Assets\Scripts_propios\Spawner.cs" />
+     <Compile Include="Assets\Spawn.cs" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Acid.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Brain.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Fleisch.shader" />

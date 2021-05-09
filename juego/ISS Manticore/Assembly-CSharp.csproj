@@ -101,6 +101,7 @@
      <Compile Include="Assets\Scripts_propios\Spawner.cs" />
      <Compile Include="Assets\Spawn.cs" />
      <Compile Include="Assets\ChangeScene.cs" />
+     <Compile Include="Assets\Repair_zone.cs" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Acid.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Brain.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Fleisch.shader" />

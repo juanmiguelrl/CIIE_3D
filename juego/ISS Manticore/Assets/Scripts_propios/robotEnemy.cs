@@ -72,7 +72,7 @@ public class robotEnemy : MonoBehaviour
         Vector3 currentPosition = transform.position;
         if (exploringFront)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * exploringSpeed);
+            transform.Translate(Vector3.back * Time.deltaTime * exploringSpeed);
             exploringCounter -= Time.deltaTime * exploringRate;
             if (exploringCounter < 0)
             {
@@ -83,7 +83,7 @@ public class robotEnemy : MonoBehaviour
         }
         else
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * exploringSpeed);
+            transform.Translate(Vector3.back * Time.deltaTime * exploringSpeed);
             exploringCounter -= Time.deltaTime * exploringRate;
             if (exploringCounter < 0)
             {

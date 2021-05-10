@@ -14,6 +14,7 @@ public class robotEnemy : MonoBehaviour
     public float exploringCounter = 50.0f;
     public const float exploringSpeed = 1.0f;
     public const float exploringRate = 80.0f;
+    public const float backSpeed = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -62,9 +63,45 @@ public class robotEnemy : MonoBehaviour
         }
     }
 
-    void fightEnemy()
+    void lookAtEnemy()
     {
-        Debug.Log("Soon ill doo something");
+        Vector3 player = GameObject.Find("Character").transform.position;
+        Vector3 lookVector = player - transform.position;
+        lookVector.y = transform.position.y;
+        //lookVector.x = transform.position.x;
+        //lookVector.z = transform.position.z;
+        Quaternion rot = Quaternion.LookRotation(lookVector);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
+        transform.Rotate(0.0f,180.0f,0.0f);
+    }
+
+    void getAwayFromEnemy()
+    {
+        transform.Translate(Vector3.forward * Time.deltaTime * backSpeed);
+    }
+
+    void fire()
+    {
+
+    }
+
+    void goToEnemy()
+    {
+
+    }
+
+    void fightEnemy(float distance)
+    {
+        lookAtEnemy();
+        if (distance < 5.0f)
+        {
+            getAwayFromEnemy();
+        }
+        else
+        {
+            goToEnemy();
+            fire();
+        }
     }
 
     void idling()
@@ -100,14 +137,13 @@ public class robotEnemy : MonoBehaviour
         //checkPlayerPosition();
         float distance = checkPlayerPosition();
         baseMovement();
-        idling();
         if (!playerDetected)
         {
-            //idling();
+            idling();
         }
         else
         {
-            fightEnemy();
+            fightEnemy(distance);
         }
         Debug.Log("Player detected is: " + playerDetected + ". Distance is: "+distance);
     }

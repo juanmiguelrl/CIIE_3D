@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class robotEnemy : MonoBehaviour
 {
+    public Rigidbody mRigidBody;
     public bool playerDetected = false;
     public bool goingUp = true;
     public float flyingCounter = 50.0f;
@@ -15,23 +17,41 @@ public class robotEnemy : MonoBehaviour
     public const float exploringSpeed = 1.0f;
     public const float exploringRate = 80.0f;
     public const float backSpeed = 1.0f;
+    public int life = 3;
+    public Transform jugador;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        mRigidBody = GetComponent<Rigidbody>();
+        //jugador = transform.Find("Character");
+        //jugador = GameObject.Find("Character").transform;
+        jugador = GameObject.Find("Character").transform;
     }
 
     float checkPlayerPosition()
     {
-        //Vector3 player = transform.Find("Character").position;
-        Vector3 player = GameObject.Find("Character").transform.position;
+        /*Vector3 player = transform.Find("Character").position;
+        //jugador = GameObject.Find("Character");
         Vector3 currentPosition = transform.position;
         float distance = Vector3.Distance(player,currentPosition);
         if (distance < 25)
         {
             this.playerDetected = true;
         } else
+        {
+            this.playerDetected = false;
+        }
+        return distance;*/
+        //Vector3 player = transform.Find("Character").position;
+        Vector3 player = GameObject.Find("Character").transform.position;
+        Vector3 currentPosition = transform.position;
+        float distance = Vector3.Distance(player, currentPosition);
+        if (distance < 25)
+        {
+            this.playerDetected = true;
+        }
+        else
         {
             this.playerDetected = false;
         }
@@ -63,7 +83,7 @@ public class robotEnemy : MonoBehaviour
         }
     }
 
-    void lookAtEnemy()
+    Vector3 lookAtEnemy()
     {
         Vector3 player = GameObject.Find("Character").transform.position;
         Vector3 lookVector = player - transform.position;
@@ -73,11 +93,15 @@ public class robotEnemy : MonoBehaviour
         Quaternion rot = Quaternion.LookRotation(lookVector);
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
         transform.Rotate(0.0f,180.0f,0.0f);
+        return player;
     }
 
-    void getAwayFromEnemy()
+    void getAwayFromEnemy(Vector3 playerPosition)
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * backSpeed);
+        //transform.Translate(Vector3.forward * Time.deltaTime * backSpeed);
+        //Vector3 movedPos = transform.position;
+        //Vector3 direction = (target.transform.position - transform.position).normalized;
+        //mRigidBody.MovePosition(playerPosition);
     }
 
     void fire()
@@ -85,21 +109,30 @@ public class robotEnemy : MonoBehaviour
 
     }
 
-    void goToEnemy()
+    void goToEnemy(Vector3 playerPosition)
     {
-
+        //transform.Translate(Vector3.back * Time.deltaTime * backSpeed);
+        //transform.Translate(Vector3.forward * Time.deltaTime * backSpeed);
+        //Vector3 movedPos = transform.position;
+        //Vector3 direction = (target.transform.position - transform.position).normalized;
+        //mRigidBody.MovePosition(playerPosition);
+        if (Vector3.Distance(transform.position, playerPosition) > 8.0)
+        {
+            transform.LookAt(jugador);
+            mRigidBody.AddRelativeForce(Vector3.forward * 0.05f, ForceMode.VelocityChange);
+        }
     }
 
     void fightEnemy(float distance)
     {
-        lookAtEnemy();
+        Vector3 playerPosition = lookAtEnemy();
         if (distance < 5.0f)
         {
-            getAwayFromEnemy();
+            getAwayFromEnemy(playerPosition);
         }
-        else
+        else if (distance > 8.0f)
         {
-            goToEnemy();
+            goToEnemy(playerPosition);
             fire();
         }
     }
@@ -145,6 +178,11 @@ public class robotEnemy : MonoBehaviour
         {
             fightEnemy(distance);
         }
-        Debug.Log("Player detected is: " + playerDetected + ". Distance is: "+distance);
+        //Debug.Log("Player detected is: " + playerDetected + ". Distance is: "+distance);
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("This object has collided with me: "+other.collider.gameObject.name);
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -8,9 +8,9 @@ using UnityEditor.SceneManagement;
 #endif
 
 
-public class GameSystem : MonoBehaviour
+public class GameSystemOld : MonoBehaviour
 {
-    public static GameSystem Instance { get; private set; }
+    public static GameSystemOld Instance { get; private set; }
 
     static int s_CurrentEpisode = -1;
     static int s_CurrentLevel = -1;

@@ -9,6 +9,8 @@ public class GameSystemInfo : MonoBehaviour
     
     public Text TimerText;
     public Text ScoreText;
+
+    public Text ReparacionText;
     
     void Awake()
     {
@@ -23,5 +25,10 @@ public class GameSystemInfo : MonoBehaviour
     public void UpdateScore(int score)
     {
         ScoreText.text = score.ToString();
+    }
+
+    public void UpdateReparacion(float score)
+    {
+        ReparacionText.text = score.ToString();
     }
 }

@@ -20,6 +20,7 @@ public class PauseMenu : MonoBehaviour
         gameObject.SetActive(true);
         GameSystem.Instance.StopTimer();
         Controller.Instance.DisplayCursor(true);
+        //Time.timeScale = 0;
     }
 
     public void OpenEpisode()
@@ -38,6 +39,7 @@ public class PauseMenu : MonoBehaviour
         GameSystem.Instance.StartTimer();
         gameObject.SetActive(false);
         Controller.Instance.DisplayCursor(false);
+        //Time.timeScale = 1;
     }
 
     public void ExitGame()

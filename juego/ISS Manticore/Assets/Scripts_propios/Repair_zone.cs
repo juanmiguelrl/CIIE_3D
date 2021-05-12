@@ -11,9 +11,12 @@ public class Repair_zone : MonoBehaviour
     public bool en_la_zona = false;
     public bool repaired = false;
     // Start is called before the first frame update
+
+    public GameSystem sistema;
+
     void Start()
     {
-        
+        sistema.MostrarReparacion();
     }
 
     // Update is called once per frame
@@ -24,6 +27,9 @@ public class Repair_zone : MonoBehaviour
         } 
         if(repair_level >= 100) {
             repaired = true;
+        }
+        if (sistema != null) {
+            sistema.UpdateReparacion(repair_level);
         }
     }
 

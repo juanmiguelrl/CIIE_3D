@@ -26,7 +26,7 @@ public class GameSystem : MonoBehaviour
     public int Score => m_Score;
 
     float m_Timer;
-    bool m_TimerRunning = false;
+    bool m_TimerRunning = true;
     
     int m_TargetCount;
     int m_TargetDestroyed;
@@ -180,7 +180,7 @@ public class GameSystem : MonoBehaviour
             m_Timer += Time.deltaTime;
             
             GameSystemInfo.Instance.UpdateTimer(m_Timer);
-            GameSystemInfo.Instance.UpdateReparacion(m_Timer);
+            
         }
 
         Transform playerTransform = Controller.Instance.transform;
@@ -210,4 +210,14 @@ public class GameSystem : MonoBehaviour
 
         GameSystemInfo.Instance.UpdateScore(m_Score);
     }
+
+    public void MostrarReparacion()
+    {
+        GameSystemInfo.Instance.MostrarReparacion();
+    }
+    public void UpdateReparacion(float porcentaje){
+        GameSystemInfo.Instance.UpdateReparacion(porcentaje);
+    }
+    
+
 }

@@ -11,6 +11,7 @@ public class GameSystemInfo : MonoBehaviour
     public Text ScoreText;
 
     public Text ReparacionText;
+    public GameObject reparacion;
     
     void Awake()
     {
@@ -27,8 +28,13 @@ public class GameSystemInfo : MonoBehaviour
         ScoreText.text = score.ToString();
     }
 
-    public void UpdateReparacion(float score)
+
+    public void MostrarReparacion()
     {
-        ReparacionText.text = score.ToString();
+        reparacion.SetActive(true);
+    }
+    public void UpdateReparacion(float porcentaje)
+    {
+        ReparacionText.text = porcentaje.ToString("N1") + " %";
     }
 }

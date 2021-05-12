@@ -26,6 +26,11 @@ public class robotAI : MonoBehaviour
     public float lookRate = 1.0f;
     public float chaseSpeed = 5.0f;
     public float enemyNearRadius = 5.0f;
+    public GameObject bullet;
+    public GameObject bulletPrefab;
+    public float fireRate = 5.0f;
+    public float shootTimer;
+    public float shootTime = 5.0f;
 
     void Start()
     {
@@ -34,6 +39,9 @@ public class robotAI : MonoBehaviour
         mRigidBody = GetComponent<Rigidbody>();
         flyingCounter = flyDuration;
         delayedLook = lookTime;
+        shootTimer = shootTime;
+        //bullet = GameObject.Find("EnemyBulletPrefab");
+        //bulletPrefab = (GameObject)Resources.Load("Assets/prefabs/EnemyBullet.prefab", typeof(GameObject));
     }
 
     int circArray(int i)
@@ -145,9 +153,45 @@ public class robotAI : MonoBehaviour
         //transform.position = Vector3.MoveTowards(futurePosition, player.transform.position, step);
     }
 
+    void shoot()
+    {
+        //checkIfBulletExists();
+        if (bullet != null)
+        {
+            Destroy(bullet);
+        }
+        if (bullet == null)
+        {
+            Vector3 startingPos = transform.position;
+            //startingPos.y *= -20;
+            startingPos += transform.forward * -3.0f;
+            startingPos += transform.up * 1.0f;
+            bullet = GameObject.Instantiate(bulletPrefab, startingPos, Quaternion.identity);
+            //bullet.GetComponentInChildren<Transform>().Scale(20.0f, 20.0f, 20.0f);
+            //bullet.GetComponentInChildren<Transform>().Rotate(0.0f, 180.0f, 0.0f);
+            //bullet.GetComponent<Transform>().Translate(transform.position - transform.forward * 20);
+            //Vector3 bulletForce = -transform.backward;
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * -500f);
+        }
+        //GameObject bullet;
+        //bullet = GameObject.Instantiate(bulletPrefab, transform.position, transform.rotation);
+        //bullet.GetComponentInChildren<RigidBody>().MoveRotation(0.0f, 180.0f, 0.0f);
+        //bullet.GetComponent<Transform>.MovePosition(transform.position + transform.back * 2);
+        //bullet.GetComponent<Rigidbody>.AddForce(transform.forward);
+        //bullet.GetComponent<enemyBullet>().init(bulletLifetime);
+    }
+
     void fire()
     {
-
+        if (shootTimer <= 0.0f)
+        {
+            shoot();
+            shootTimer = shootTime;
+        }
+        else
+        {
+            shootTimer -= Time.deltaTime;
+        }
     }
 
     // Update is called once per frame

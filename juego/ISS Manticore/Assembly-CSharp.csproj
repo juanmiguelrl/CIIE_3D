@@ -45,6 +45,7 @@
      <Compile Include="Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_Rope.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\Wall Run\SFPSC_WallRun.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\LevelLayout\LevelRoomGroup.cs" />
+     <Compile Include="Assets\Scripts_propios\Sistema.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_PlayerMovement.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\PanelManager.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\PoolSystem.cs" />
@@ -74,11 +75,14 @@
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\ImpactManager.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\WeaponAnimationEventHandler.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\TargetSpawner.cs" />
+     <Compile Include="Assets\Scripts_propios\GameSystemOld.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\FinalScoreUI.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\RestartLevel.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Weapon.cs" />
+     <Compile Include="Assets\Scripts_propios\robotAI.cs" />
      <Compile Include="Assets\Scripts_propios\robotEnemy.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\StartCheckpoint.cs" />
+     <Compile Include="Assets\Scripts_propios\MostrarReparacion.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
      <Compile Include="Assets\Robot.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\AmmoBox.cs" />
@@ -102,9 +106,9 @@
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\GameSystemInfo.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\DissolveAction.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\FullscreenMap.cs" />
+     <Compile Include="Assets\Scripts_propios\enemyBullet.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\GameDatabase.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Controller.cs" />
-     <Compile Include="Assets\Scripts_propios\robotAI.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_DoorKey.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\LevelSelectionUI.cs" />
      <Compile Include="Assets\Scripts_propios\ChangeScene.cs" />
@@ -114,9 +118,6 @@
      <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_DoorScript.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
-     <Compile Include="Assets\Scripts_propios\Sistema.cs" />
-     <Compile Include="Assets\Scripts_propios\GameSystemOld.cs" />
-     <Compile Include="Assets\Scripts_propios\MostrarReparacion.cs" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Acid.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Brain.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Fleisch.shader" />
@@ -132,6 +133,7 @@
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\MapShader.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Font\OFL.txt" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\StandardFleisch.shader" />
+     <None Include="Assets\Sci-Fi Styled Modular Pack\Readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>D:/unity/2021.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

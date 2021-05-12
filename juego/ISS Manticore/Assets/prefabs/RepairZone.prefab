@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1578199546951758334}
   - component: {fileID: 1578199546951758321}
   m_Layer: 0
-  m_Name: CaptureZone
+  m_Name: RepairZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,3 +113,5 @@ MonoBehaviour:
   repair_level: 0
   nombre_objeto_a_colisionar: Character
   en_la_zona: 0
+  repaired: 0
+  sistema: {fileID: 0}

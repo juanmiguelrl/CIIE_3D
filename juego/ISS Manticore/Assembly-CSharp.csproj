@@ -51,6 +51,7 @@
      <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_GrapplingHook.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
+     <Compile Include="Assets\Scripts_propios\EnemyAi.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Audio\UIAudioPlayer.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts_propios\Repair_zone.cs" />
@@ -65,6 +66,8 @@
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Audio\RandomPlayer.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\GameAction.cs" />
      <Compile Include="Assets\Scripts_propios\Spawner.cs" />
+     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_HeroController.cs" />
+     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_Button.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\MovingAction.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\LevelLayout\LevelRoom.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\ImpactManager.cs" />
@@ -76,6 +79,7 @@
      <Compile Include="Assets\Scripts_propios\robotEnemy.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\StartCheckpoint.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
+     <Compile Include="Assets\Robot.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\AmmoBox.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\WeaponInfoUI.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Helpers.cs" />
@@ -83,11 +87,13 @@
      <Compile Include="Assets\Creator Kit - FPS\Scripts\GradientTexture.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\PauseMenu.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Minimap\MinimapSystem.cs" />
+     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_PlugScript.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\CameraShaker.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Projectile.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\KeyLockSystem\Lock.cs" />
+     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_HeroInteractive.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\EnableObjectAction.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Audio\WorldAudioPool.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
@@ -97,11 +103,14 @@
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\FullscreenMap.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\GameDatabase.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Controller.cs" />
+     <Compile Include="Assets\Scripts_propios\robotAI.cs" />
+     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_DoorKey.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\LevelSelectionUI.cs" />
      <Compile Include="Assets\Scripts_propios\ChangeScene.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\GameSystem.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\LevelLayout\LevelLayout.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
+     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_DoorScript.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Acid.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Brain.shader" />

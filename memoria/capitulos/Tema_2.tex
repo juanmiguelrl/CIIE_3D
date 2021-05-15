@@ -209,14 +209,106 @@ En el protagonista al disparar se calculará el ángulo de disparo del ratón re
 \section{Videojuego en 3D}
 
 \subsection{Descripción}
+ISS Manticore 3D es un First Person Shooter(FPS), donde el protagonista debe superar diferentes desafios hasta alcanzar su objetivo. Para ello dispondrá de armamento del que se podrá ayudar para derrotar a los distintos enemigos que tratarán de entorpecer su paso. Al comienzo de la aventura tendrá que desplazarse hasta encontrar las dos palancas que le permitiran pasar a la siguiente fase, durante este trayecto tendrá que eliminar a todos los enemigos que se crucen en su camino. Una vez completado este desafio, el personaje tendrá que arreglar un genarador, para ello ha de permanecer en la zona en que se encuentra el motor durante un tiempo suficiente, esto no va a resultarle tarea fácil puesto que habrá multiples enemigos tratando de dañarlo. Finalmente tendrá que conseguir llegar a una pequeña nave de emergencia, ayudandose de su gancho para ir avanzando por cajas u otros objetos que se encontrará por el espacio y le permitirán alcanzar la nave. 
+
 \subsubsection{Personajes}
+
+En esta entrega 3D, solamente tendrá un personaje principal, es decir, el mismo aventurero y cariñoso Jackie.
+
+Como en la entrega 2D, el protagonista tendrá que completar distintas fases, en las que tendrá que superar distintos enemigos y acometer distintas tareas para alcanzar su objetivo, para ello el jugador tendrá que mover al protagonista empleando las flechas del teclado para avanzar, esquivar a los enemigos y recoger los coleccionables necesarios y disparando con un click de ratón a los distintos personajes que se interpongan en su camino. La dinámica es la misma con excepción de que ahora se pondrá acompañar el personaje en primera persona y el manejo de la visón de jack se efectuará desde el ratón.
+
 \subsubsection{Enemigos}
+
 \subsection{Escenas}
+
+La transición entre escenas se muestra en el diagrama de la Figura \ref{fig:TrasicionEscenas3D}. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.35]{imagenes/transicionEscenas.jpeg}
+	\caption{\label{fig:TrasicionEscenas3D}Diagrama de transición de las escenas}
+\end{figure}
+
 \subsubsection{Escena 1}
+La primera fase empieza en un extremo del escenario donde el personaje tiene que ir avanzando e ir completando los retos que ese escenario va proponiendo.
+
+La única forma de superar esa fase es eliminando todos los enemigos y accionar dos palancas, que estan distribuidas por el escenario, para abrir una puerta y dar paso a la segunda fase.
+
+Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
+\begin{itemize}
+	\item paquete Prefab 1: kdjsflksdfkljaklfjalfa
+	\item Prefab 2: kdjsflksdfkljaklfjalfa
+	\item Prefab 3: kdjsflksdfkljaklfjalfa
+	\item Prefab 4: kdjsflksdfkljaklfjalfa
+\end{itemize}
+
 \subsubsection{Escena 2}
+La segunda fase se empieza también es un extremo del escenario y para superarla será necesario superar los retos que se presenten de la misma forma que la fase anterior.
+
+Para completar esa fase, es necesario arreglar un “generador” que se encuentra en el centro del escenario que, posiblemente estará plagado de enemigos que intentarán imposibilitar que el personaje principal arregle el problema en dicho equipo eléctrico. Para solucionar el problema, el personaje simplemente tendrá que estar cerca de él durante un tiempo mientras se carga el porcentaje visible en pantalla. Una vez se complete, el generador tendrá su problema resuelto y el personaje tendrá que volver por el mismo camino por el cual llegó para pasar a la última fase.
+
+Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
+\begin{itemize}
+	\item paquete Prefab 1: kdjsflksdfkljaklfjalfa
+	\item Prefab 2: kdjsflksdfkljaklfjalfa
+	\item Prefab 3: kdjsflksdfkljaklfjalfa
+	\item Prefab 4: kdjsflksdfkljaklfjalfa
+\end{itemize}
+
 \subsubsection{Escena 3}
+En la tercera fase, como en las anteriores, el personaje empieza en un extremo de la misma y va avanzando dentro de esa escena.
+
+El objetivo es huir de esa nave para llegar a otra pequeña nave de emergencia que se encuentra localizada en el otro extremo de ese escenario. El único inconveniente que el personaje va encontrar es que él mismo tiene que buscar una forma de acceder a dicha nave de emergencia, que está localizada en un plano distinto al del protagonista.
+
+El personaje encontrará cajas flotantes que él mismo podrá escalar directamente o utilizar un recurso de ``gancho'' especial para porder escalar. Una vez llegado al objetivo, el personaje entrará en dicha nave de emergencia y esa fase se dará por concluida.
+
+Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
+\begin{itemize}
+	\item paquete Prefab 1: kdjsflksdfkljaklfjalfa
+	\item Prefab 2: kdjsflksdfkljaklfjalfa
+	\item Prefab 3: kdjsflksdfkljaklfjalfa
+	\item Prefab 4: kdjsflksdfkljaklfjalfa
+\end{itemize}
+
 \subsection{Aspectos destacables y detalles de su implementación}
+
+\subsubsection{Controlador del personaje}
+El personaje se controla desde una perspectiva en primera persona. Como base del controlador,  se hace uso del ``Asset tal'' que se encuetra en la carpeta tal.
+
+Originalmente el personaje tenia un comportamiento tal.....
+
+Se modifica el controlador en ``Eso'' para lograr una adaptación ``tal'' para funcionara con el desarrollo del proyecto actual. Los detalles se lista a continuación:
+
+\begin{itemize}
+	\item Movimiento: kldjfalkjdlkjfla
+	\item Ataque: dkfñlakflñadskfal
+	\item Modo de combate: fkdsjflkajsldj
+	\item Rodar: askdjfalksfdjlska
+	\item Saltar: lfkjadslkfjaklsdfj
+	\item Animaciones: fkjdsfklajflk
+\end{itemize}
+
+La mayoría de las animaciones que proporciona el personaje es .........
+
 \subsection{Diseño}
+
+\subsubsection{Diseño del controlador}
+
+\subsubsection{Diseño del HUD - Patrón Observador}
+
+\subsubsection{Diseño de las escenas}
+
+\subsubsection{Camera controler}
+
+\subsubsection{Enemigos - Patrón estrategia}
+
+\subsubsection{Combate - Patrón estrategia}
+
+\subsubsection{Puntuación}
+
+\subsubsection{Menu principal}
+
+
 
 
 

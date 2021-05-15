@@ -19,6 +19,8 @@ public class movingPlatform : MonoBehaviour
     public oscilatableAxis oscilateAxis;
     private bool oscilatingUp = true;
     private float currentOscilation = 0.0f;
+    public GameObject player;
+    public bool playerOn=false;
 
     void Start()
     {
@@ -42,6 +44,11 @@ public class movingPlatform : MonoBehaviour
     {
         updatePivot();
         Vector3 nextPosition = Vector3.MoveTowards(transform.position,pivots[nextPivot], Time.deltaTime*movementSpeed);
+        if (playerOn)
+        {
+            //player.GetComponent<RigidBody>.MovePosition(nextPosition);
+            player.transform.position = nextPosition;
+        }
         transform.position = nextPosition;
     }
 
@@ -117,4 +124,27 @@ public class movingPlatform : MonoBehaviour
             oscilate();
         }
     }
+
+    /*
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            //Vector3 scale = player.transform.localScale;
+            Debug.Log("Player entered");
+            //player.transform.parent = transform;
+            //player.transform.localScale = scale;
+            playerOn = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            //Debug.Log("Player exited");
+            //player.transform.parent = null;
+            playerOn = false;
+        }
+    }*/
 }

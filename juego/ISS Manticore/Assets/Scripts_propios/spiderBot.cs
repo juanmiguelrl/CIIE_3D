@@ -11,6 +11,7 @@ public class spiderBot : MonoBehaviour
     private float timeToAttack;
     public UnityEngine.AI.NavMeshAgent navigator;
     public GameObject player;
+    public bool backing = false;
 
     void Start()
     {
@@ -34,7 +35,53 @@ public class spiderBot : MonoBehaviour
         {
             state.speed = 0.5F;
         }*/
-        chaseEnemy();
+        float dis = Vector3.Distance(player.transform.position, transform.position);
+        Debug.Log("Distance is: " + dis);
+        timeToAttack -= Time.deltaTime;
+        if (dis < 1.5)
+        {
+            if (timeToAttack <= 0)
+            {
+                animt.SetBool("Attack", false);
+                animt.SetBool("Chasing",false);
+                animt.SetBool("Back", true);
+                timeToAttack = attackTimer;
+                backing = true;
+            }
+            else
+            {
+                if (!backing)
+                {
+                    chaseEnemy();
+                    animt.SetBool("Chasing",false);
+                    animt.SetBool("Back", false);
+                }
+                else
+                {
+                    transform.Translate(Vector3.forward * -Time.deltaTime);
+                }
+            }
+        }
+        else
+        {
+            if (dis > 4.0f)
+            {
+                animt.SetBool("Back", false);
+                backing = false;
+            }
+            else
+            {
+                if (backing)
+                {
+                    transform.Translate(Vector3.forward * -Time.deltaTime);
+                }
+                else
+                {
+                    chaseEnemy();
+                }
+            }
+        }
+        /*chaseEnemy();
         animt.SetBool("Chasing", true);
         //animt.SetBool("Attack", false);
         if (timeToAttack <= 0)
@@ -47,7 +94,7 @@ public class spiderBot : MonoBehaviour
         else
         {
             timeToAttack -= Time.deltaTime;
-        }
+        }*/
         //animt.SetBool("Died", true);
     }
 }

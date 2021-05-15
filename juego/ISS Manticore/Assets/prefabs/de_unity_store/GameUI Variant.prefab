@@ -79,6 +79,42 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "% Reparaci\xF3n"
+--- !u!1 &851428488641139349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2393584208081171572}
+  m_Layer: 5
+  m_Name: Objetivo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2393584208081171572
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851428488641139349}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 9219416865137509213}
+  m_Father: {fileID: 8343576500732244963}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4160872134223372785
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,6 +166,85 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerText: {fileID: 0}
+--- !u!1 &6006047529870089003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9219416865137509213}
+  - component: {fileID: 5738614973050577077}
+  - component: {fileID: 3169758642061921849}
+  m_Layer: 5
+  m_Name: ObjetivoText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &9219416865137509213
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006047529870089003}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2393584208081171572}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -481.9037, y: -92.05232}
+  m_SizeDelta: {x: 512.9285, y: 148.0067}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5738614973050577077
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006047529870089003}
+  m_CullTransparentMesh: 0
+--- !u!114 &3169758642061921849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006047529870089003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 40ffd43ce0e622d4ba0508733950d866, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
 --- !u!1 &8062479105046169444
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,9 +508,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8430908198110736374, guid: 42a0ddb40af1b4a4bab43ed3db529ef5,
         type: 3}
+      propertyPath: Objetivo
+      value: 
+      objectReference: {fileID: 851428488641139349}
+    - target: {fileID: 8430908198110736374, guid: 42a0ddb40af1b4a4bab43ed3db529ef5,
+        type: 3}
       propertyPath: reparacion
       value: 
       objectReference: {fileID: 4160872134223372785}
+    - target: {fileID: 8430908198110736374, guid: 42a0ddb40af1b4a4bab43ed3db529ef5,
+        type: 3}
+      propertyPath: ObjetivoText
+      value: 
+      objectReference: {fileID: 3169758642061921849}
     - target: {fileID: 8430908198110736374, guid: 42a0ddb40af1b4a4bab43ed3db529ef5,
         type: 3}
       propertyPath: ReparacionText
@@ -403,6 +528,12 @@ PrefabInstance:
       objectReference: {fileID: 7116536944669134156}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42a0ddb40af1b4a4bab43ed3db529ef5, type: 3}
+--- !u!224 &8343576500732244963 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8522670533298525044, guid: 42a0ddb40af1b4a4bab43ed3db529ef5,
+    type: 3}
+  m_PrefabInstance: {fileID: 399920068148043927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7084438944254496198 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7483916611443240273, guid: 42a0ddb40af1b4a4bab43ed3db529ef5,

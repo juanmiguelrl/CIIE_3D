@@ -5,6 +5,10 @@ public class LeverSystem : MonoBehaviour
     public GameObject[] levers;
 
     public GameObject door;
+    public GameSystem sistema;
+
+    public string objetivoActivarPalancas;
+    public string objetivoPalancasActivadas;
 
     bool[] leversOpened;
 
@@ -15,6 +19,8 @@ public class LeverSystem : MonoBehaviour
         {
             leversOpened[i] = false;
         }
+        sistema.MostrarObjetivo();
+        sistema.UpdateObjetivo(objetivoActivarPalancas);
     }
 
     void openDoor()
@@ -35,7 +41,10 @@ public class LeverSystem : MonoBehaviour
         {
             if (leversOpened[i]) opened++;
 
-            if (opened == levers.Length) openDoor();
+            if (opened == levers.Length) {
+                sistema.UpdateObjetivo(objetivoPalancasActivadas);
+                openDoor();
+            }
         }
     }
 }

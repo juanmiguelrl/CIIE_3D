@@ -22604,6 +22604,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356833042 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 838811002978249753, guid: ddfc470a2f3f03848a274cbd0e8b188f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1954162959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbfa64aa3e3156a49902c35d2b773221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1389213691
 GameObject:
   m_ObjectHideFlags: 0
@@ -24300,6 +24312,12 @@ MonoBehaviour:
   - {fileID: 240119355}
   - {fileID: 1216807561}
   door: {fileID: 1864710526}
+  sistema: {fileID: 1356833042}
+  objetivoActivarPalancas: "Objetivo: activar 2 palancas para poder abrir la puerta
+    que permite acceder al motor la 1\xBA al fondo a la izquierda de la nave la 2\xBA
+    en el centro, al lado de la puerta"
+  objetivoPalancasActivadas: 'Objetivo: Accede al tunel que has abierto en el centro
+    del mapa'
 --- !u!4 &1721404372
 Transform:
   m_ObjectHideFlags: 0

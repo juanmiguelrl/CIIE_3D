@@ -219,5 +219,12 @@ public class GameSystem : MonoBehaviour
         GameSystemInfo.Instance.UpdateReparacion(porcentaje);
     }
     
+    public void MostrarObjetivo()
+    {
+        GameSystemInfo.Instance.MostrarObjetivo();
+    }
+    public void UpdateObjetivo(string objetivo){
+        GameSystemInfo.Instance.UpdateObjetivo(objetivo);
+    }
 
 }

@@ -126,6 +126,9 @@
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\ChangeColor.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_DoorScript.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
+     <Compile Include="Assets\Scripts_propios\GanchoEscenario3.cs" />
+     <Compile Include="Assets\Scripts_propios\plataformaMovimiento.cs" />
+     <Compile Include="Assets\Scripts_propios\gancho2.cs" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Acid.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Brain.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Fleisch.shader" />

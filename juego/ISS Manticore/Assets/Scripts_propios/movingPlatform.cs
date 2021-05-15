@@ -22,6 +22,8 @@ public class movingPlatform : MonoBehaviour
     public GameObject player;
     public bool playerOn=false;
 
+    public GameObject plataforma;
+
     void Start()
     {
         numPivots = pivots.Length;
@@ -125,14 +127,15 @@ public class movingPlatform : MonoBehaviour
         }
     }
 
-    /*
+    
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
         {
             //Vector3 scale = player.transform.localScale;
             Debug.Log("Player entered");
-            //player.transform.parent = transform;
+            player.transform.parent = transform;
+            //player.transform.localScale = UnityEngine.Vector3.Scale(1,1,1);
             //player.transform.localScale = scale;
             playerOn = true;
         }
@@ -143,8 +146,8 @@ public class movingPlatform : MonoBehaviour
         if (other.gameObject == player)
         {
             //Debug.Log("Player exited");
-            //player.transform.parent = null;
+            player.transform.parent = null;
             playerOn = false;
         }
-    }*/
+    }
 }

@@ -30,7 +30,7 @@ public class GameSystemInfo : MonoBehaviour
         ScoreText.text = score.ToString();
     }
 
-
+    //funciones añadidas a partir de aquí
     public void MostrarReparacion()
     {
         reparacion.SetActive(true);
@@ -48,4 +48,6 @@ public class GameSystemInfo : MonoBehaviour
     {
         ObjetivoText.text = textoObjetivo;
     }
+
+
 }

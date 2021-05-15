@@ -10,6 +10,8 @@ public class Repair_zone : MonoBehaviour
     public string nombre_objeto_a_colisionar;
     public bool en_la_zona = false;
     public bool repaired = false;
+    public string objetivoVolver;
+    public string objetivoArreglarMotor;
     // Start is called before the first frame update
 
     public GameSystem sistema;
@@ -17,6 +19,8 @@ public class Repair_zone : MonoBehaviour
     void Start()
     {
         sistema.MostrarReparacion();
+        sistema.MostrarObjetivo();
+        sistema.UpdateObjetivo(objetivoArreglarMotor);
     }
 
     // Update is called once per frame
@@ -27,6 +31,8 @@ public class Repair_zone : MonoBehaviour
         } 
         if(repair_level >= 100) {
             repaired = true;
+            sistema.UpdateObjetivo(objetivoVolver);
+            sistema.SiguienteNivel();
         }
         if (sistema != null) {
             sistema.UpdateReparacion(repair_level);

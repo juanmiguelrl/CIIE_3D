@@ -19,6 +19,7 @@ public class GameSystem : MonoBehaviour
     public float TargetMissedPenalty = 1.0f;
     public AudioSource BGMPlayer;
     public AudioClip EndGameSound;
+    public GameObject cambiarNivel;
     
     public float RunTime => m_Timer;
     public int TargetCount => m_TargetCount;
@@ -211,6 +212,7 @@ public class GameSystem : MonoBehaviour
         GameSystemInfo.Instance.UpdateScore(m_Score);
     }
 
+    //funciones añadidas a partir de aquí
     public void MostrarReparacion()
     {
         GameSystemInfo.Instance.MostrarReparacion();
@@ -225,6 +227,11 @@ public class GameSystem : MonoBehaviour
     }
     public void UpdateObjetivo(string objetivo){
         GameSystemInfo.Instance.UpdateObjetivo(objetivo);
+    }
+
+    public void SiguienteNivel()
+    {
+        cambiarNivel.SetActive(true);
     }
 
 }

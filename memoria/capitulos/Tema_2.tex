@@ -209,145 +209,35 @@ En el protagonista al disparar se calculará el ángulo de disparo del ratón re
 \section{Videojuego en 3D}
 
 \subsection{Descripción}
-ISS Manticore 3D es un First Person Shooter(FPS), donde el protagonista debe superar diferentes desafios hasta alcanzar su objetivo. Para ello dispondrá de armamento del que se podrá ayudar para derrotar a los distintos enemigos que tratarán de entorpecer su paso. Al comienzo de la aventura tendrá que desplazarse hasta encontrar las dos palancas que le permitiran pasar a la siguiente fase, durante este trayecto tendrá que eliminar a todos los enemigos que se crucen en su camino. Una vez completado este desafio, el personaje tendrá que arreglar un genarador, para ello ha de permanecer en la zona en que se encuentra el motor durante un tiempo suficiente, esto no va a resultarle tarea fácil puesto que habrá multiples enemigos tratando de dañarlo. Finalmente tendrá que conseguir llegar a una pequeña nave de emergencia, ayudandose de su gancho para ir avanzando por cajas u otros objetos que se encontrará por el espacio y le permitirán alcanzar la nave. 
+ISS Manticore 3D es un First Person Shooter(FPS), donde el protagonista debe superar diferentes desafios hasta alcanzar su objetivo. Para ello dispondrá de armamento del que se podrá ayudar para derrotar a los distintos enemigos que tratarán de entorpecer su paso. Al comienzo de la aventura tendrá que desplazarse hasta encontrar las dos palancas que le permitiran pasar a la siguiente fase, durante este trayecto irá eliminando a los enemigos que se crucen en su camino. Una vez completado este desafío, el personaje tendrá que arreglar un motor, para ello ha de permanecer en la zona en que se encuentra el motor durante un tiempo suficiente, esto no va a resultarle tarea fácil puesto que habrá multiples enemigos tratando de dañarlo. Finalmente tendrá que conseguir llegar a una pequeña nave de emergencia, ayudandose de las plataformas que se encontrará por el espacio y le permitirán alcanzar la nave. 
 
-\subsubsection{Personajes}
+\subsection{Personajes}
 
 En esta entrega 3D, solamente tendrá un personaje principal, es decir, el mismo aventurero y cariñoso Jackie.
 
-Como en la entrega 2D, el protagonista tendrá que completar distintas fases, en las que tendrá que superar distintos enemigos y acometer distintas tareas para alcanzar su objetivo, para ello el jugador tendrá que mover al protagonista empleando las flechas del teclado para avanzar, esquivar a los enemigos y recoger los coleccionables necesarios y disparando con un click de ratón a los distintos personajes que se interpongan en su camino. La dinámica es la misma con excepción de que ahora se pondrá acompañar el personaje en primera persona y el manejo de la visón de jack se efectuará desde el ratón.
+Como en la entrega 2D, el protagonista tendrá que completar distintas fases, en las que tendrá que superar distintos enemigos y acometer distintas tareas para alcanzar su objetivo, para ello el jugador tendrá que mover al protagonista empleando las flechas del teclado para avanzar, esquivar a los enemigos y recoger los coleccionables necesarios y disparando con un click de ratón a los distintos personajes que se interpongan en su camino. La dinámica es la misma con excepción de que ahora se pondrá acompañar el personaje en primera persona y el manejo de la visón de Jackie se efectuará desde el ratón.
 
-\subsubsection{Enemigos}
+\subsection{Enemigos}
 
-\subsection{Escenas}
-
-La transición entre escenas se muestra en el diagrama de la Figura \ref{fig:TrasicionEscenas3D}. 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.35]{imagenes/transicionEscenas.jpeg}
-	\caption{\label{fig:TrasicionEscenas3D}Diagrama de transición de las escenas}
-\end{figure}
-
-\subsubsection{Menú principal}
-El menú principal consta de 3 botones como se muestra en la Figura \ref{fig:MenuPrincipal3D1}.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.35]{imagenes/MenuPrincipal3D1.png}
-	\caption{\label{fig:MenuPrincipal3D1}Ejemplo del Menu Principal}
-\end{figure}
-
-Detalles de cada opción del menu presentado en la Figura \ref{fig:MenuPrincipal3D1}:
 \begin{itemize}
-	\item \textbf{Nueva Partida:} Activa una segunda ventana en el menú con una explicación con los controles del juego y un botón ``Continuar al juego'' que lleva al nivel 1.
+	\item \textbf{Bot Enemy:} Enemigo a distancia que dispara y causa daño
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.35]{imagenes/MenuPrincipalNuevaPartida.png}
-		\caption{\label{fig:MenuPrincipalNuevaPartida}Apartado Nueva partida del Menu Principal}
+		\includegraphics[scale=0.60]{imagenes/BotEnemy.png}
+		\caption{\label{fig:BotEnemy}Ejemplo del Bot Enemy}
 	\end{figure}
-	\item \textbf{Créditos:} Activa una segunda ventana en el menú con los créditos del juego y un botón ``cerrar'' para cerrar esta ventana
+	\item \textbf{Spider Bot Enemy:} Enemigo a melee \footnote{Melee: expresión para indicar que hay una lucha cuerpo a cuerpo}.
+
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.35]{imagenes/MenuPrincipalCreditos.png}
-		\caption{\label{fig:MenuPrincipalCreditos}Apartado Créditdo del Menu Principal}
+		\includegraphics[scale=0.60]{imagenes/SpiderBotEnemy.png}
+		\caption{\label{fig:SpiderBotEnemy}Ejemplo del Spider Bot Enemy}
 	\end{figure}
-	\item \textbf{Salir:} Cierra el juego 
 \end{itemize}
-
-
-\subsubsection{Menú de victoria}
-El menú de victoria consta de un texto informativo para indicar que se ha completado el juego (Figura \ref{fig:MenuVictoria3D}), y consta de 1 botón:
-\begin{itemize}
-	\item \textbf{Reiniciar Juego:} Devuelve al jugador al Menu Principal donde podra escoger que acción tomar.
-\end{itemize}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.85]{imagenes/MenuVictoria3D.png}
-	\caption{\label{fig:MenuVictoria3D}Ejemplo de la pantalla de victoria}
-\end{figure}
-
-\subsubsection{Escena 1}
-La primera fase empieza en un extremo del escenario, el personaje debe recorrerlo hasta encontrar las dos palancas que debe accionar para conseguir pasar al siguiente nivel, durante el trayecto por el escenario el personaje ha de eliminar a los enemigos que intentarán dificultar su devenir.
-
-La única forma de superar esa fase es accionando dos palancas, que se encuentran distribuidas por el escenario y permiten abrir la puerta que da acceso al siguiente nivel.
-
-Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
-\begin{itemize}
-	\item Creator kit: FPS: Se utiliza como base para el personaje,su controlador, el sistema de disparos, el menú de pausa y el HUD
-	\item SpaceSkies Free: Se utiliza uno de sus assets como skybox
-	\item Federation Corvette F3: Se utiliza como base del escenario
-	\item Interactive Physical Door Pack: Se utiliza como base para crear las palancas
-	\item Simple Heart Health System: Se utiliza como base para crear el sistema de vidas
-	\item Enemy Robots: Se utilizan para los modelos de los enemigos
-\end{itemize}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.35]{imagenes/transicionEscenas.jpeg}
-	\caption{\label{fig:TrasicionEscenas3D}Diagrama de transición de las escenas}
-\end{figure}
-
-
-\subsubsection{Escena 2}
-Para completar esta fase, será necesario arreglar un generador que se encuentra en el centro del escenario, en el cual aparecerán constantemente enemigos desde una zona no acesible que dificultarán al personaje arreglar el problema en el generador. Para realizar esta tarea se ha optado por la mecánica de capturar el objetivo lo cual sucede de forma pasiva mientras el jugador se mantenga en el área cercana. Para facilitar dicha tarea, en un pasillo externo el jugador podrá encontrar cajas de munición y vida para recuperarse y poder continuar luchando, dichos objetos apareceran cada 40 segundos. Una vez se complete, el personaje tendrá que volver por el mismo camino por el cual llegó para pasar a la última fase.
-
-Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
-\begin{itemize}
-	\item Creator kit: FPS: Se utiliza como base para el personaje,su controlador, el sistema de disparos, el menú de pausa y el HUD
-	\item SpaceSkies Free: Se utiliza uno de sus assets como skybox
-	\item Federation Corvette F3: Se utiliza como base del escenario
-	\item Simple Heart Health System: Se utiliza como base para crear el sistema de vidas
-	\item Sci-Fi Styled Modular Pack: Se utiliza como base para la construcción del escenario encima de la nave, con el generador y los pasillos
-	\item SciFi Enemies and Vehicles: Se utiliza para el modelo del enemigo con sus animaciones de ataque y persecución
-	\item Boxes pack: Se utiliza para las cajas de munición y vida
-\end{itemize}
-
-\subsubsection{Escena 3}
-En esta fase el objetivo es huir de esa nave para llegar a otra pequeña nave de emergencia que se encuentra localizada en el otro extremo de ese escenario. El único inconveniente que el personaje va encontrar es que él mismo tiene que buscar una forma de acceder a dicha nave de emergencia, que está localizada en un plano distinto al del protagonista.
-
-El personaje encontrará cajas flotantes que él mismo podrá escalar directamente o utilizar un recurso de ``gancho'' especial para porder escalar. Una vez llegado al objetivo, el personaje entrará en dicha nave de emergencia y esa fase se dará por concluida.
-
-Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
-\begin{itemize}
-	\item Creator kit: FPS: Se utiliza como base para el personaje,su controlador, el sistema de disparos, el menú de pausa y el HUD
-	\item SpaceSkies Free: Se utiliza uno de sus assets como skybox
-	\item Federation Corvette F3: Se utiliza como base del escenario
-	\item Sci-Fi Styled Modular Pack: Se utiliza para los modelos de las plataformas móviles
-	\item Simple Heart Health System: Se utiliza como base para crear el sistema de vidas
-	\item Destructor Spaceship: Se utiliza para el modelo de nave a la que tiene que llegar el personaje
-\end{itemize}
-
-\subsection{Aspectos destacables y detalles de su implementación}
-
-\subsubsection{Controlador del personaje}
-El personaje se controla desde una perspectiva en primera persona. Como base del controlador,  se hace uso del ``Asset tal'' que se encuetra en la carpeta tal.
-
-Originalmente el personaje tenia un comportamiento tal.....
-
-Se modifica el controlador en ``Eso'' para lograr una adaptación ``tal'' para funcionara con el desarrollo del proyecto actual. Los detalles se lista a continuación:
-
-\begin{itemize}
-	\item Movimiento: kldjfalkjdlkjfla
-	\item Ataque: dkfñlakflñadskfal
-	\item Modo de combate: fkdsjflkajsldj
-	\item Rodar: askdjfalksfdjlska
-	\item Saltar: lfkjadslkfjaklsdfj
-	\item Animaciones: fkjdsfklajflk
-\end{itemize}
-
-La mayoría de las animaciones que proporciona el personaje es .........
-
-
-\subsection{Enlaces importantes}
-
 
 
 
 \subsection{Diseño}
-
-\subsubsection{Escenarios}
-Los escenarios utilizan elementos creados mediante la herramienta probuilder, por lo que es necesario la instalación de la herramienta probuilder en Unity para poder visualizar e interactuar correctamente con algunos escenarios.
 
 \subsubsection{Diseño del controlador}
 
@@ -357,10 +247,19 @@ El HUD consta de varios elementos:
 	\item \textbf{Tiempo:} Indica cuanto tiempo se lleva en el nivel.
 	\item \textbf{Puntos:} Indica la puntuación del jugador matando enemigos.
 	\item \textbf{Vidas:} Indica cuanta vida le queda al jugador.
-	\item \textbf{Objetivo:} Explica al jugador cual es su objetivo actual, diciendole a donde tiene que ir o qué tiene que hacer.
+	\item \textbf{Objetivo:} Explica al jugador cual es su objetivo actual, diciéndole a donde tiene que ir o qué tiene que hacer.
 	\item \textbf{Munición:} Indica cuanta munición le queda al arma del jugador.
 	\item \textbf{\% Reparación:} Exclusivo del 2º nivel, indica el porcentaje de la reparación del motor llevada a cabo.
 \end{itemize}
+
+En la Figura \ref{fig:PantallaHUD3D} muestra un ejemplo de visualización del HUD en pantalla.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{imagenes/PantallaHUD3D.png}
+	\caption{\label{fig:PantallaHUD3D}Ejemplo de la visualización del HUD en pantalla}
+\end{figure}
+
 El menú de pausa consta de estos elementos:
 \begin{itemize}
 	\item \textbf{Continuar:} Para quitar el menú de pausa y seguir con el juego
@@ -375,11 +274,38 @@ El menú de derrota, que aparece cuando el jugador pierde toda su vida consta de
 \end{itemize}
 
 \subsubsection{Diseño de las escenas}
+La 1º escena utiliza como base de la escena el prefab de una de las naves disponibles en el paquete "Federation Corvette F3", donde el jugador se moverá por su superficie, aparte se han añadido varios obstáculos y paredes en el escenario. Se han repartido enemigos por el escenario para dificultar el avance del jugador, también se han añadido dos palancas, una en el extremo de la nave, con una luz potente para que se fácil saber hacia donde dirigirse, y la 2º en una plataforma en el medio del escenario junto a la puerta que abren estas dos en conjunto.
+
+La 2º escena, que se desarrolla en el interior de la nave, el escenario está compuesto por unos pasillos en los que se encuentra el motor de la nave en el centro. De uno de los pasillos con los que intersecciona, tiene una puerta medio subida por donde pasan enemigos persiguiendo al jugador, pero este no puede pasar por ese hueco, al otro lado se spawnean los enemigos sin que el jugador lo vea. En uno de los extremos del pasillo, para fomentar la exploración, que el jugador se mueva por el escenario y facilitar el combate, se han colocado un spawner de un item de vida y un spawner de un item de munición.
+
+La 3º escena, se desarrolla en el mismo lugar que el 1º nivel, pero esta vez se comienza donde el jugador entraba al 2º nivel desde el 1º, en el centro del mapa. Se han colocado plataformas estáticas y móviles que el jugador tendrá que utilizar para llegar a la pequeña nave que se encuentra posada sobre uno de las torres de la nave grande que hace de escenario. Para este nivel el script de movimiento de las plataformas que se creó también es capaz de rotarlas, pero utilizar esto en plataformas que utilizara el jugador se acabó descartando porque dificultaba mucho al jugador saltar correctamente de una plataforma a otra.
 
 \subsubsection{Zona de reparación del motor}
 Para la reparación del motor, se ha creado un objeto que es un cubo invisible que se puede atravesar, el área de reparación, con un script que sigue el patrón observer, comprobando si el jugador se encuentra dentro de él o no. 
 
-Para mostrar en la HUD el porcentaje de la reparación se han creado en el script Gamesystem.cs las funciones “MostrarReparacion” (que sirve para indicar que se active el objeto del HUD que muestra el porcenaje de reparación) y “UpdateReparacion” (que actualiza el número que indica el porcentaje), que a su vez llaman a sus homónimos en la clase GameSystemInfo que se encuentran en el objeto GameUI, inicializado directamente por el GameSystem. 
+Para mostrar en la HUD el porcentaje de la reparación se han creado en el script \textit{Gamesystem.cs} las funciones ``MostrarReparacion'' (que sirve para indicar que se active el objeto del HUD que muestra el porcenaje de reparación) y ``UpdateReparacion'' (que actualiza el número que indica el porcentaje), que a su vez llaman a sus homónimos en la clase GameSystemInfo que se encuentran en el objeto GameUI, inicializado directamente por el GameSystem. 
+
+\subsubsection{Mostrar el objetivo actual}
+Para mostrar los objetivos el funcionamiento, con las funciones ``MostrarObjetivo'' y ``UpdateObjetivo'', estas funciones son llamadas al GameSystem por: 
+
+En el 1º nivel por ``LeverSystem'', el sistema encargado del funcionamiento de las palancas, al iniciarse indicará que el objetivo es activar las palancas del escenario y dónde están localizadas. Y mediante el patrón observador, comprobará si el estado de todas las palancas es que estén activadas, entonces al haber activado todas las palancas se volverá a llamar a ``UpdateObjetivo'' para que actualice el objetivo diciéndole al jugador que tiene que atravesar el pasillo que ha abierto. 
+
+En el 2º nivel, ``RepairZone'', el sistema encargado del funcionamiento del porcenataje de reparación, al iniciarse indicará que el objetivo es reparar el motor. Y mediante el patrón observador, comprobará si el estado del motor es que esté reparado, y entonces volverá a llamar a ``UpdateObjetivo'' para que actualice el objetivo diciendole al jugador que tiene que volver por donde vino.
+
+En el 3º nivel, simplemente un script al iniciarse indicará que el objetivo es subir por las plataformas para llegar a una nave en la que huir, solo hay un objetivo en este nivel, por lo que no necesitará actualizarse más.
+
+\subsubsection{Enemigos}
+Respecto a los enemigos en común comentar que utilizan el patrón plantilla siendo prefabs por Unity con varias opciones configurables. A continuación, se pueden ver los aspectos de cada uno:
+\begin{itemize}
+	\item \textbf{BotEnemy:} Este prefab de enemigo, parte del modelo del paquete Enemy Robots. Para este se ha creado un Script con nombre RobotAI, el cual permitirá al enemigo realizar diversas acciones. Por defecto, se moverá a través de los puntos marcados como pivots circularmente patrullando, esto permite al enemigo tener interacción propia con el sistema en el tiempo que no detecta al enemigo. Este enemigo detectará al jugador una vez este entre dentro de un rango de distancia, configurable a traves del prefab, y lanze un LineCast para detectar si hay algún otro objeto entre medias, así se evita que el jugador piende que el enemigo tiene una ventaja por el simple hecho de detectarlo sin llegar a verlo. Una vez detectado, el enemigo empezará a perseguir al jugador, manteniendo un mínimo de distancia para que el jugador. Consta, así mismo, de un contador entre ataques para disparar cada el tiempo indicado. Finalmente, en los ataques instancia un objeto EnemyBullet, al cual asigna un movimiento, este al colisionar con el jugador restará un punto de vida, comentar también que se ha tomado la decisión de que los disparos del enemigo sean un proyectil, y no hitscan (disparo inmediato sin tiempo de viaje), con un movimiento más lento y retardo a la hora de apuntar para darle ventaja al jugador y que no sienta que los enemigos están haciendo trampa al calcular precisamente e inmediato donde atacar
+	\item \textbf{PA\_Warrior Variant:} Este prefab de enemigo, parte del prefab y animaciones PA\_Warrior del paquete SciFi Enemies and Vehicles. Nuevamente se ha creado un Script para dichos enemigos, estes incluyen el comportamiento inteligente dado por unity para navegar hasta la posición del jugador. Una vez más tiene un contador para medir el tiempo entre ataques. Una vez pase el contador, si se encuentra en un rango suficientemente cerca del jugador iniciarán la animación de ataque y provocarán daño en el jugador. Se ha tomado la decisión de que los enemigos provoquen daño reducido al jugador, pero como persiguen y atacan muchos juntos son un tipo de enemigo mas diverso. Mencionar como patrón utilizado la máquina de estados proporcionada por unity para la animación. Vease Figura \ref{fig:MaquinaEstados}.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.65]{imagenes/MaquinaEstados.png}
+	\caption{\label{fig:MaquinaEstados}Ejemplo de la visualización del HUD en pantalla}
+\end{figure}
 
 \subsubsection{Camera controler}
 
@@ -391,8 +317,138 @@ Para mostrar en la HUD el porcentaje de la reparación se han creado en el scrip
 
 \subsubsection{Menu principal}
 
+\subsubsection{Plataformas móviles}
+Para la creación de plataformas móviles se ha creado un script que nos permite a través del inspector controlar el movimiento y/o rotación de la plataforma a la que este asignada. Para ambas características se permite indicar las velocidades. En lo que respecta al movimiento este se basa en una serie de puntos a través de los cuales se irá moviendo y se pueden configurar a través del inspector.
+
+\subsubsection{Sistema de palancas}
+En cuanto al sistema de palancas, se utiliza el prefab de la palanca y su correspondiente animación, visible cuando el personaje la acciona. Se ha modificado el script propio de la palanca para obtener Lever con el comportamiento deseado. Además, se ha creado otro script nuevo para el sistema, denominado LeverSystem, que permite que, al añadir a la escena tantas palancas como se deseen, solo se abra la puerta cuando todas y cada una de ellas estén accionadas.
+
+\subsubsection{Sistema de vidas}
+El sistema de vidas gestiona la salud del personaje, cuando una bala de un bot enemy golpea al personaje, este pierde una vida. En cambio, cuando es un spiderbot el que alcanza al personaje, este se queda sin un cuarto de vida. También permite al personaje recuperar vida cuando este recoge un item de vida.
 
 
+\subsection{Escenas}
+
+La transición entre escenas se muestra en el diagrama de la Figura \ref{fig:TrasicionEscenas3D}. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.60]{imagenes/transicionEscenas3D.png}
+	\caption{\label{fig:TrasicionEscenas3D}Diagrama de transición de las escenas}
+\end{figure}
+
+\subsubsection{Menú principal}
+El menú principal consta de 3 botones como se muestra en la Figura \ref{fig:MenuPrincipal3D1}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.35]{imagenes/MenuPrincipal3D1.png}
+	\caption{\label{fig:MenuPrincipal3D1}Ejemplo del Menu Principal}
+\end{figure}
+
+Detalles de cada opción del menu presentado en la Figura \ref{fig:MenuPrincipal3D1}:
+\begin{itemize}
+	\item \textbf{Nueva Partida:} Activa una segunda ventana en el menú con una explicación con los controles del juego y un botón ``Continuar al juego'' que lleva al nivel 1 como se muestra en la Figura \ref{fig:MenuPrincipalNuevaPartida}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.35]{imagenes/MenuPrincipalNuevaPartida.png}
+		\caption{\label{fig:MenuPrincipalNuevaPartida}Apartado Nueva partida del Menu Principal}
+	\end{figure}
+	\item \textbf{Créditos:} Activa una segunda ventana en el menú con los créditos del juego y un botón ``cerrar'' para cerrar esta ventana como se muestra en la Figura \ref{fig:MenuPrincipalCreditos}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.35]{imagenes/MenuPrincipalCreditos.png}
+		\caption{\label{fig:MenuPrincipalCreditos}Apartado Créditdo del Menu Principal}
+	\end{figure}
+	\item \textbf{Salir:} Cierra el juegos.
+\end{itemize}
 
 
+\subsubsection{Menú de victoria}
+El menú de victoria consta de un texto informativo para indicar que se ha completado el juego (Figura \ref{fig:MenuVictoria3D}), y consta de 1 botón:
+\begin{itemize}
+	\item \textbf{Reiniciar Juego:} Devuelve al jugador al Menu Principal (Figura \ref{fig:MenuPrincipal3D1}), donde podrá escoger que acción tomar.
+\end{itemize}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.85]{imagenes/MenuVictoria3D.png}
+	\caption{\label{fig:MenuVictoria3D}Ejemplo de la pantalla de victoria}
+\end{figure}
+
+\subsubsection{Escena 1}
+La primera fase empieza en un extremo del escenario, el personaje debe recorrerlo hasta encontrar las dos palancas (Figura \ref{fig:Palanca}) que debe accionar para conseguir pasar al siguiente nivel, durante el trayecto por el escenario el personaje ha de eliminar a los enemigos que intentarán dificultar su devenir.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.75]{imagenes/Palanca.png}
+	\caption{\label{fig:Palanca}Ejemplo de la palanca}
+\end{figure}
+
+La única forma de superar esa fase es accionando dos palancas, que se encuentran distribuidas por el escenario y permiten abrir la puerta que da acceso al siguiente nivel.
+
+Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
+\begin{itemize}
+	\item \textbf {Creator kit - FPS:} Se utiliza como base para el personaje,su controlador, el sistema de disparos, el menú de pausa y el HUD
+	\item \textbf{SpaceSkies Free:} Se utiliza uno de sus assets como skybox
+	\item \textbf{Federation Corvette F3:} Se utiliza como base del escenario
+	\item \textbf{Interactive Physical Door Pack:} Se utiliza como base para crear las palancas
+	\item \textbf{Simple Heart Health System:} Se utiliza como base para crear el sistema de vidas
+	\item \textbf{Enemy Robots:} Se utilizan para los modelos de los enemigos
+\end{itemize}
+
+
+\subsubsection{Escena 2}
+Para completar esta fase, será necesario arreglar un generador (Figura \ref{fig:Generador}) que se encuentra en el centro del escenario, en el cual aparecerán constantemente enemigos desde una zona no acesible que dificultarán al personaje arreglar el problema en el generador. Para realizar esta tarea se ha optado por la mecánica de capturar el objetivo lo cual sucede de forma pasiva mientras el jugador se mantenga en el área cercana. Para facilitar dicha tarea, en un pasillo externo el jugador podrá encontrar cajas de munición y vida para recuperarse y poder continuar luchando, dichos objetos apareceran cada 40 segundos. Una vez se complete, el personaje tendrá que volver por el mismo camino por el cual llegó para pasar a la última fase.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.75]{imagenes/Generador.png}
+	\caption{\label{fig:Generador}Ejemplo del generador}
+\end{figure}
+
+Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
+\begin{itemize}
+	\item \textbf{Creator kit - FPS:} Se utiliza como base para el personaje,su controlador, el sistema de disparos, el menú de pausa y el HUD
+	\item \textbf{SpaceSkies Free:} Se utiliza uno de sus assets como skybox
+	\item \textbf{Federation Corvette F3:} Se utiliza como base del escenario
+	\item \textbf{Simple Heart Health System:} Se utiliza como base para crear el sistema de vidas
+	\item \textbf{Sci-Fi Styled Modular Pack:} Se utiliza como base para la construcción del escenario encima de la nave, con el generador y los pasillos
+	\item \textbf{SciFi Enemies and Vehicles:} Se utiliza para el modelo del enemigo con sus animaciones de ataque y persecución
+	\item \textbf{Boxes pack:} Se utiliza para las cajas de munición y vida
+\end{itemize}
+
+
+\subsubsection{Escena 3}
+En esta fase el objetivo es huir de esa nave para llegar a otra pequeña nave de emergencia que se encuentra localizada en una de las torres de ese escenario. El único inconveniente que el personaje va encontrar es que él mismo tiene que buscar una forma de acceder a dicha nave de emergencia, que está localizada en un plano distinto al del protagonista.
+
+El personaje encontrará cajas flotantes que él mismo podrá utilizar saltando sobre ellas. Una vez llegado al objetivo, el personaje entrará en dicha nave de emergencia, esa fase se dará por concluida y se dará paso a la escena del menú de victoria.
+
+Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
+\begin{itemize}
+	\item \textbf{Creator kit - FPS:} Se utiliza como base para el personaje,su controlador, el sistema de disparos, el menú de pausa y el HUD
+	\item \textbf{SpaceSkies Free:} Se utiliza uno de sus assets como skybox
+	\item \textbf{Federation Corvette F3:} Se utiliza como base del escenario
+	\item \textbf{Sci-Fi Styled Modular Pack:} Se utiliza para los modelos de las plataformas móviles
+	\item \textbf{Simple Heart Health System:} Se utiliza como base para crear el sistema de vidas
+	\item \textbf{Destructor Spaceship:} Se utiliza para el modelo de nave a la que tiene que llegar el personaje
+\end{itemize}
+
+\subsection{Aspectos destacables y detalles de su implementación}
+
+\subsubsection{Controlador del personaje}
+El personaje se controla desde una perspectiva en primera persona. Como base del controlador,  se hace uso del ``Asset tal'' que se encuetra en la carpeta tal.
+
+Originalmente el personaje tenia un comportamiento tal.....
+
+Se modifica el controlador en ``Eso'' para lograr una adaptación ``tal'' para funcionara con el desarrollo del proyecto actual. Los detalles se lista a continuación:
+
+\begin{itemize}
+	\item \textbf{Movimiento:} kldjfalkjdlkjfla
+	\item \textbf{Ataque:} dkfñlakflñadskfal
+	\item \textbf{Modo de combate:} fkdsjflkajsldj
+	\item \textbf{Rodar:} askdjfalksfdjlska
+	\item \textbf{Saltar:} lfkjadslkfjaklsdfj
+	\item \textbf{Animaciones:} fkjdsfklajflk
+\end{itemize}
+
+La mayoría de las animaciones que proporciona el personaje es .........

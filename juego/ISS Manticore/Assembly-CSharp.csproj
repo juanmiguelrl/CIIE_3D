@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts_propios\gancho.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Audio\RandomPlayer.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\GameAction.cs" />
+     <Compile Include="Assets\Scripts_propios\plataformaMovimiento.cs" />
      <Compile Include="Assets\Scripts_propios\Spawner.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_HeroController.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_Button.cs" />
@@ -100,6 +101,7 @@
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Projectile.cs" />
+     <Compile Include="Assets\Scripts_propios\gancho2.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\KeyLockSystem\Lock.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_HeroInteractive.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\EnableObjectAction.cs" />
@@ -116,6 +118,7 @@
      <Compile Include="Assets\Creator Kit - FPS\Scripts\GameDatabase.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Controller.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_DoorKey.cs" />
+     <Compile Include="Assets\Scripts_propios\GanchoEscenario3.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\LevelSelectionUI.cs" />
      <Compile Include="Assets\HealthHeartSystem\Scripts\PlayerStats.cs" />
      <Compile Include="Assets\Scripts_propios\ChangeScene.cs" />
@@ -126,9 +129,7 @@
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\ChangeColor.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_DoorScript.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
-     <Compile Include="Assets\Scripts_propios\GanchoEscenario3.cs" />
-     <Compile Include="Assets\Scripts_propios\plataformaMovimiento.cs" />
-     <Compile Include="Assets\Scripts_propios\gancho2.cs" />
+     <Compile Include="Assets\Scripts_propios\Vida.cs" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Acid.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Brain.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Fleisch.shader" />

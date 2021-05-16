@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 public class PauseMenu : MonoBehaviour
 {
+    public string menu;
     public static PauseMenu Instance { get; private set; }
 
     void Awake()
@@ -42,6 +44,10 @@ public class PauseMenu : MonoBehaviour
         //Time.timeScale = 1;
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(menu);
+    }
     public void ExitGame()
     {
 #if UNITY_EDITOR

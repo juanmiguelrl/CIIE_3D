@@ -22196,7 +22196,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh40642
+  m_Name: pb_Mesh47696
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22673,7 +22673,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1347432706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f89316a970122a4eb0d9c74e3622805, type: 3}
+  m_Script: {fileID: 11500000, guid: c68a0050ca3a6864a961cd4e9e38fa09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nombre_escena: VictoryMenu
@@ -22689,7 +22689,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9, y: 9, z: 12}
+  m_Size: {x: 9, y: 9, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1347432709
 Transform:
@@ -22699,8 +22699,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347432706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.16, y: 81.64, z: 21.08}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -19.8, y: 81.64, z: 27.8}
+  m_LocalScale: {x: 1, y: 1, z: 3.0255}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 29

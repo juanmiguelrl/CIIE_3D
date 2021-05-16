@@ -52,6 +52,8 @@ MonoBehaviour:
   TimerText: {fileID: 111679628367434699}
   ScoreText: {fileID: 2136816510301588970}
   ReparacionText: {fileID: 0}
+  ObjetivoText: {fileID: 0}
+  Objetivo: {fileID: 0}
   reparacion: {fileID: 0}
 --- !u!1 &280021191702977773
 GameObject:
@@ -151,7 +153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3645527446989957675
 RectTransform:
   m_ObjectHideFlags: 0

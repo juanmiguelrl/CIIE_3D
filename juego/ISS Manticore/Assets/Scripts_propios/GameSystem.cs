@@ -188,7 +188,7 @@ public class GameSystem : MonoBehaviour
         
         
         //UI Update
-        MinimapUI.Instance.UpdateForPlayerTransform(playerTransform);
+        //MinimapUI.Instance.UpdateForPlayerTransform(playerTransform);
        
         if(FullscreenMap.Instance.gameObject.activeSelf)
             FullscreenMap.Instance.UpdateForPlayerTransform(playerTransform);

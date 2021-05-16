@@ -21,6 +21,7 @@ public class spiderBot : MonoBehaviour
         timeToAttack = attackTimer;
         navigator = GetComponent<UnityEngine.AI.NavMeshAgent>();
         animt.SetBool("Chasing", true);
+        player = GameObject.Find("Character");
     }
 
     void chaseEnemy()

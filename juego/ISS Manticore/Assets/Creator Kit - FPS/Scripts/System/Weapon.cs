@@ -11,6 +11,7 @@ using UnityEditor;
 public class Weapon : MonoBehaviour
 {
     static RaycastHit[] s_HitInfoBuffer = new RaycastHit[8];
+    public int m_Score = 0;
     
     public enum TriggerType
     {
@@ -262,6 +263,8 @@ public class Weapon : MonoBehaviour
                 target.Got(damage);*/
                 GameObject target = hit.collider.gameObject;
                 Destroy(target);
+                m_Score++;
+                GameSystemInfo.Instance.UpdateScore(m_Score);
             }
         }
 

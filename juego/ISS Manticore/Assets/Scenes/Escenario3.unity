@@ -23559,7 +23559,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh40838
+  m_Name: pb_Mesh39720
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25141,6 +25141,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6058810949031506147, guid: 9ef6372b8fe150e4f86a651db13de992,
+        type: 3}
+      propertyPath: JumpSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6058810949031506158, guid: 9ef6372b8fe150e4f86a651db13de992,
         type: 3}
       propertyPath: m_Name
@@ -25531,7 +25536,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042083411}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

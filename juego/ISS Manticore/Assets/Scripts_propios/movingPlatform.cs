@@ -21,6 +21,7 @@ public class movingPlatform : MonoBehaviour
     private float currentOscilation = 0.0f;
     public GameObject player;
     public bool playerOn=false;
+    private Quaternion rotation;
 
     public GameObject plataforma;
 
@@ -61,6 +62,7 @@ public class movingPlatform : MonoBehaviour
 
     void oscilate()
     {
+        //player.transform.rotation = rotation;
         Debug.Log(transform.rotation.eulerAngles);
         if (oscilateAxis == oscilatableAxis.x)
         {
@@ -132,6 +134,7 @@ public class movingPlatform : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+            rotation = player.transform.rotation;
             //Vector3 scale = player.transform.localScale;
             Debug.Log("Player entered");
             player.transform.parent = transform;
@@ -147,6 +150,7 @@ public class movingPlatform : MonoBehaviour
         {
             //Debug.Log("Player exited");
             player.transform.parent = null;
+            player.transform.rotation = rotation;
             //playerOn = false;
         }
     }

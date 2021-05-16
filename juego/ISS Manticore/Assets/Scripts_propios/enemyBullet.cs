@@ -7,6 +7,7 @@ public class enemyBullet : MonoBehaviour
     // Start is called before the first frame update
     public float lifeTime = 2.0f;
     public bool active;
+
     void Start()
     {
         
@@ -26,6 +27,7 @@ public class enemyBullet : MonoBehaviour
     {
         if (collision.gameObject.name == "Character")
         {
+            PlayerStats.Instance.TakeDamage(1.0f);
             Debug.Log("Collided with player");
         }
         Destroy(gameObject);

@@ -258,8 +258,10 @@ public class Weapon : MonoBehaviour
             //this is a target
             if (hit.collider.gameObject.layer == 10)
             {
-                Target target = hit.collider.gameObject.GetComponent<Target>();
-                target.Got(damage);
+                /*Target target = hit.collider.gameObject.GetComponent<Target>();
+                target.Got(damage);*/
+                GameObject target = hit.collider.gameObject;
+                Destroy(target);
             }
         }
 

@@ -113,7 +113,7 @@ public class movingPlatform : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (moves)
         {
@@ -137,7 +137,7 @@ public class movingPlatform : MonoBehaviour
             player.transform.parent = transform;
             //player.transform.localScale = UnityEngine.Vector3.Scale(1,1,1);
             //player.transform.localScale = scale;
-            playerOn = true;
+            //playerOn = true;
         }
     }
 
@@ -147,7 +147,7 @@ public class movingPlatform : MonoBehaviour
         {
             //Debug.Log("Player exited");
             player.transform.parent = null;
-            playerOn = false;
+            //playerOn = false;
         }
     }
 }

@@ -230,11 +230,42 @@ La transición entre escenas se muestra en el diagrama de la Figura \ref{fig:Tra
 \end{figure}
 
 \subsubsection{Menú principal}
-El menú principal consta de 3 botones:
+El menú principal consta de 3 botones como se muestra en la Figura \ref{fig:MenuPrincipal3D1}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.35]{imagenes/MenuPrincipal3D1.png}
+	\caption{\label{fig:MenuPrincipal3D1}Ejemplo del Menu Principal}
+\end{figure}
+
+Detalles de cada opción del menu presentado en la Figura \ref{fig:MenuPrincipal3D1}:
 \begin{itemize}
-	\item Nueva Partida:
-	\item fsss
+	\item \textbf{Nueva Partida:} Activa una segunda ventana en el menú con una explicación con los controles del juego y un botón ``Continuar al juego'' que lleva al nivel 1.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.35]{imagenes/MenuPrincipalNuevaPartida.png}
+		\caption{\label{fig:MenuPrincipalNuevaPartida}Apartado Nueva partida del Menu Principal}
+	\end{figure}
+	\item \textbf{Créditos:} Activa una segunda ventana en el menú con los créditos del juego y un botón ``cerrar'' para cerrar esta ventana
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.35]{imagenes/MenuPrincipalCreditos.png}
+		\caption{\label{fig:MenuPrincipalCreditos}Apartado Créditdo del Menu Principal}
+	\end{figure}
+	\item \textbf{Salir:} Cierra el juego 
 \end{itemize}
+
+
+\subsubsection{Menú de victoria}
+El menú de victoria consta de un texto informativo para indicar que se ha completado el juego (Figura \ref{fig:MenuVictoria3D}), y consta de 1 botón:
+\begin{itemize}
+	\item \textbf{Reiniciar Juego:} Devuelve al jugador al Menu Principal donde podra escoger que acción tomar.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.85]{imagenes/MenuVictoria3D.png}
+	\caption{\label{fig:MenuVictoria3D}Ejemplo de la pantalla de victoria}
+\end{figure}
 
 \subsubsection{Escena 1}
 La primera fase empieza en un extremo del escenario, el personaje debe recorrerlo hasta encontrar las dos palancas que debe accionar para conseguir pasar al siguiente nivel, durante el trayecto por el escenario el personaje ha de eliminar a los enemigos que intentarán dificultar su devenir.
@@ -253,9 +284,10 @@ Para el diseño de este escenario se han utilizado los Prefabs que proporcionan 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.35]{imagenes/Escenas.jpeg}
+	\includegraphics[scale=0.35]{imagenes/transicionEscenas.jpeg}
 	\caption{\label{fig:TrasicionEscenas3D}Diagrama de transición de las escenas}
 \end{figure}
+
 
 \subsubsection{Escena 2}
 Para completar esta fase, será necesario arreglar un generador que se encuentra en el centro del escenario, en el cual aparecerán constantemente enemigos desde una zona no acesible que dificultarán al personaje arreglar el problema en el generador. Para realizar esta tarea se ha optado por la mecánica de capturar el objetivo lo cual sucede de forma pasiva mientras el jugador se mantenga en el área cercana. Para facilitar dicha tarea, en un pasillo externo el jugador podrá encontrar cajas de munición y vida para recuperarse y poder continuar luchando, dichos objetos apareceran cada 40 segundos. Una vez se complete, el personaje tendrá que volver por el mismo camino por el cual llegó para pasar a la última fase.
@@ -320,8 +352,34 @@ Los escenarios utilizan elementos creados mediante la herramienta probuilder, po
 \subsubsection{Diseño del controlador}
 
 \subsubsection{Diseño del HUD - Patrón Observador}
+El HUD consta de varios elementos:
+\begin{itemize}
+	\item \textbf{Tiempo:} Indica cuanto tiempo se lleva en el nivel.
+	\item \textbf{Puntos:} Indica la puntuación del jugador matando enemigos.
+	\item \textbf{Vidas:} Indica cuanta vida le queda al jugador.
+	\item \textbf{Objetivo:} Explica al jugador cual es su objetivo actual, diciendole a donde tiene que ir o qué tiene que hacer.
+	\item \textbf{Munición:} Indica cuanta munición le queda al arma del jugador.
+	\item \textbf{\% Reparación:} Exclusivo del 2º nivel, indica el porcentaje de la reparación del motor llevada a cabo.
+\end{itemize}
+El menú de pausa consta de estos elementos:
+\begin{itemize}
+	\item \textbf{Continuar:} Para quitar el menú de pausa y seguir con el juego
+	\item \textbf{Menu principal:} Para volver al menú principal.
+	\item \textbf{Salir:} Para salir del juego.
+\end{itemize}
+El menú de derrota, que aparece cuando el jugador pierde toda su vida consta de estos elementos:
+\begin{itemize}
+	\item \textbf{Reiniciar nivel:} Para reiniciar el nivel actual.
+	\item \textbf{Menu principal:} Para volver al menú principal.
+	\item \textbf{Salir:} Para salir del juego.
+\end{itemize}
 
 \subsubsection{Diseño de las escenas}
+
+\subsubsection{Zona de reparación del motor}
+Para la reparación del motor, se ha creado un objeto que es un cubo invisible que se puede atravesar, el área de reparación, con un script que sigue el patrón observer, comprobando si el jugador se encuentra dentro de él o no. 
+
+Para mostrar en la HUD el porcentaje de la reparación se han creado en el script Gamesystem.cs las funciones “MostrarReparacion” (que sirve para indicar que se active el objeto del HUD que muestra el porcenaje de reparación) y “UpdateReparacion” (que actualiza el número que indica el porcentaje), que a su vez llaman a sus homónimos en la clase GameSystemInfo que se encuentran en el objeto GameUI, inicializado directamente por el GameSystem. 
 
 \subsubsection{Camera controler}
 

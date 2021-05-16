@@ -7,18 +7,20 @@ public class spiderBot : MonoBehaviour
     // Start is called before the first frame update
     //public Animation anim;
     public Animator animt;
-    public float attackTimer = 5.0f;
+    public float attackTimer = 10.0f;
     private float timeToAttack;
     public UnityEngine.AI.NavMeshAgent navigator;
     public GameObject player;
-    public bool backing = false;
+    public bool attacking = false;
+    private float attackDuration;
+    private float attackLength = 2.0f;
 
     void Start()
     {
-        //anim = GetComponent<Animation>();
         animt = GetComponent<Animator>();
         timeToAttack = attackTimer;
         navigator = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        animt.SetBool("Chasing", true);
     }
 
     void chaseEnemy()
@@ -29,72 +31,66 @@ public class spiderBot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //anim.Play("PA_Warrior Idle_Clip");
-        /*anim = GetComponent<Animation>();
-        foreach (AnimationState state in anim)
-        {
-            state.speed = 0.5F;
-        }*/
         float dis = Vector3.Distance(player.transform.position, transform.position);
-        Debug.Log("Distance is: " + dis);
         timeToAttack -= Time.deltaTime;
+        if (attacking)
+        {
+            attackDuration -= Time.deltaTime;
+        }
+        if (attackDuration < 0)
+        {
+            animt.SetBool("Attack", false);
+            attacking = false;
+        }
         if (dis < 1.5)
         {
             if (timeToAttack <= 0)
             {
-                animt.SetBool("Attack", false);
-                animt.SetBool("Chasing",false);
+                animt.SetBool("Attack", true);
+                animt.SetBool("Chasing", false);
                 animt.SetBool("Back", true);
                 timeToAttack = attackTimer;
-                backing = true;
-            }
-            else
+                attacking = true;
+                attackDuration = attackLength;
+                PlayerStats.Instance.TakeDamage(0.25f);
+            } else
             {
-                if (!backing)
-                {
-                    chaseEnemy();
-                    animt.SetBool("Chasing",false);
-                    animt.SetBool("Back", false);
-                }
-                else
-                {
-                    transform.Translate(Vector3.forward * -Time.deltaTime);
-                }
+                navigator.ResetPath();
+                navigator.isStopped = true;
             }
         }
         else
         {
-            if (dis > 4.0f)
+            if (!attacking)
             {
-                animt.SetBool("Back", false);
-                backing = false;
+                navigator.isStopped = false;
+                chaseEnemy();
             }
             else
             {
-                if (backing)
-                {
-                    transform.Translate(Vector3.forward * -Time.deltaTime);
-                }
-                else
-                {
-                    chaseEnemy();
-                }
+                navigator.ResetPath();
+                navigator.isStopped = true;
             }
         }
-        /*chaseEnemy();
-        animt.SetBool("Chasing", true);
-        //animt.SetBool("Attack", false);
-        if (timeToAttack <= 0)
-        {
-            animt.SetBool("Attack", true);
-            animt.SetBool("Back", true);
-            //animt.SetBool("Attack", false);
-            timeToAttack = attackTimer;
-        }
-        else
-        {
-            timeToAttack -= Time.deltaTime;
-        }*/
-        //animt.SetBool("Died", true);
     }
+
+    /*void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Character" && attacking)
+        {
+            PlayerStats.Instance.TakeDamage(1.0f);
+            Debug.Log("Collided with player");
+        }
+        Destroy(gameObject);
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.name == "Character" && attacking)
+        {
+            PlayerStats.Instance.TakeDamage(0.25f);
+            Debug.Log("Collided with player");
+        }
+        Destroy(gameObject);
+    }*/
 }

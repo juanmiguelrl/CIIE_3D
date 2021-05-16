@@ -230,47 +230,60 @@ La transición entre escenas se muestra en el diagrama de la Figura \ref{fig:Tra
 \end{figure}
 
 \subsubsection{Menú principal}
-
-
-\subsubsection{Escena 1}
-La primera fase empieza en un extremo del escenario, el personaje debe recorrerlo hasta encontrar las dos palancas que debe accionar para conseguir pasar al siguiente nivel, durante el trayecto por el escenario el personaje ha de eliminar a todos los enemigos que intentarán dificultar su devenir.
-
-La única forma de superar esa fase es eliminando todos los enemigos y accionando dos palancas, que se encuentran distribuidas por el escenario y permiten abrir la puerta que da acceso al siguiente nivel.
-
-Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
+El menú principal consta de 3 botones:
 \begin{itemize}
-	\item paquete Prefab 1: kdjsflksdfkljaklfjalfa
-	\item Prefab 2: kdjsflksdfkljaklfjalfa
-	\item Prefab 3: kdjsflksdfkljaklfjalfa
-	\item Prefab 4: kdjsflksdfkljaklfjalfa
+	\item Nueva Partida:
+	\item fsss
 \end{itemize}
 
-\subsubsection{Escena 2}
-La segunda fase se empieza también en un extremo del escenario y para superarla será necesario superar los retos que se presenten de la misma forma que la fase anterior.
+\subsubsection{Escena 1}
+La primera fase empieza en un extremo del escenario, el personaje debe recorrerlo hasta encontrar las dos palancas que debe accionar para conseguir pasar al siguiente nivel, durante el trayecto por el escenario el personaje ha de eliminar a los enemigos que intentarán dificultar su devenir.
 
-Para completar esa fase, es necesario arreglar un “generador” que se encuentra en el centro del escenario que, posiblemente estará plagado de enemigos que intentarán imposibilitar que el personaje principal arregle el problema en dicho equipo eléctrico. Para solucionar el problema, el personaje simplemente tendrá que estar cerca de él durante un tiempo mientras se carga el porcentaje visible en pantalla. Una vez se complete, el generador tendrá su problema resuelto y el personaje tendrá que volver por el mismo camino por el cual llegó para pasar a la última fase.
+La única forma de superar esa fase es accionando dos palancas, que se encuentran distribuidas por el escenario y permiten abrir la puerta que da acceso al siguiente nivel.
 
 Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
 \begin{itemize}
-	\item paquete Prefab 1: kdjsflksdfkljaklfjalfa
-	\item Prefab 2: kdjsflksdfkljaklfjalfa
-	\item Prefab 3: kdjsflksdfkljaklfjalfa
-	\item Prefab 4: kdjsflksdfkljaklfjalfa
+	\item Creator kit: FPS: Se utiliza como base para el personaje,su controlador, el sistema de disparos, el menú de pausa y el HUD
+	\item SpaceSkies Free: Se utiliza uno de sus assets como skybox
+	\item Federation Corvette F3: Se utiliza como base del escenario
+	\item Interactive Physical Door Pack: Se utiliza como base para crear las palancas
+	\item Simple Heart Health System: Se utiliza como base para crear el sistema de vidas
+	\item Enemy Robots: Se utilizan para los modelos de los enemigos
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.35]{imagenes/Escenas.jpeg}
+	\caption{\label{fig:TrasicionEscenas3D}Diagrama de transición de las escenas}
+\end{figure}
+
+\subsubsection{Escena 2}
+Para completar esta fase, será necesario arreglar un generador que se encuentra en el centro del escenario, en el cual aparecerán constantemente enemigos desde una zona no acesible que dificultarán al personaje arreglar el problema en el generador. Para realizar esta tarea se ha optado por la mecánica de capturar el objetivo lo cual sucede de forma pasiva mientras el jugador se mantenga en el área cercana. Para facilitar dicha tarea, en un pasillo externo el jugador podrá encontrar cajas de munición y vida para recuperarse y poder continuar luchando, dichos objetos apareceran cada 40 segundos. Una vez se complete, el personaje tendrá que volver por el mismo camino por el cual llegó para pasar a la última fase.
+
+Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
+\begin{itemize}
+	\item Creator kit: FPS: Se utiliza como base para el personaje,su controlador, el sistema de disparos, el menú de pausa y el HUD
+	\item SpaceSkies Free: Se utiliza uno de sus assets como skybox
+	\item Federation Corvette F3: Se utiliza como base del escenario
+	\item Simple Heart Health System: Se utiliza como base para crear el sistema de vidas
+	\item Sci-Fi Styled Modular Pack: Se utiliza como base para la construcción del escenario encima de la nave, con el generador y los pasillos
+	\item SciFi Enemies and Vehicles: Se utiliza para el modelo del enemigo con sus animaciones de ataque y persecución
+	\item Boxes pack: Se utiliza para las cajas de munición y vida
 \end{itemize}
 
 \subsubsection{Escena 3}
-En la tercera fase, como en las anteriores, el personaje empieza en un extremo de la misma y va avanzando dentro de esa escena.
-
-El objetivo es huir de esa nave para llegar a otra pequeña nave de emergencia que se encuentra localizada en el otro extremo de ese escenario. El único inconveniente que el personaje va encontrar es que él mismo tiene que buscar una forma de acceder a dicha nave de emergencia, que está localizada en un plano distinto al del protagonista.
+En esta fase el objetivo es huir de esa nave para llegar a otra pequeña nave de emergencia que se encuentra localizada en el otro extremo de ese escenario. El único inconveniente que el personaje va encontrar es que él mismo tiene que buscar una forma de acceder a dicha nave de emergencia, que está localizada en un plano distinto al del protagonista.
 
 El personaje encontrará cajas flotantes que él mismo podrá escalar directamente o utilizar un recurso de ``gancho'' especial para porder escalar. Una vez llegado al objetivo, el personaje entrará en dicha nave de emergencia y esa fase se dará por concluida.
 
 Para el diseño de este escenario se han utilizado los Prefabs que proporcionan los siguientes paquetes:
 \begin{itemize}
-	\item paquete Prefab 1: kdjsflksdfkljaklfjalfa
-	\item Prefab 2: kdjsflksdfkljaklfjalfa
-	\item Prefab 3: kdjsflksdfkljaklfjalfa
-	\item Prefab 4: kdjsflksdfkljaklfjalfa
+	\item Creator kit: FPS: Se utiliza como base para el personaje,su controlador, el sistema de disparos, el menú de pausa y el HUD
+	\item SpaceSkies Free: Se utiliza uno de sus assets como skybox
+	\item Federation Corvette F3: Se utiliza como base del escenario
+	\item Sci-Fi Styled Modular Pack: Se utiliza para los modelos de las plataformas móviles
+	\item Simple Heart Health System: Se utiliza como base para crear el sistema de vidas
+	\item Destructor Spaceship: Se utiliza para el modelo de nave a la que tiene que llegar el personaje
 \end{itemize}
 
 \subsection{Aspectos destacables y detalles de su implementación}
@@ -293,7 +306,16 @@ Se modifica el controlador en ``Eso'' para lograr una adaptación ``tal'' para f
 
 La mayoría de las animaciones que proporciona el personaje es .........
 
+
+\subsection{Enlaces importantes}
+
+
+
+
 \subsection{Diseño}
+
+\subsubsection{Escenarios}
+Los escenarios utilizan elementos creados mediante la herramienta probuilder, por lo que es necesario la instalación de la herramienta probuilder en Unity para poder visualizar e interactuar correctamente con algunos escenarios.
 
 \subsubsection{Diseño del controlador}
 

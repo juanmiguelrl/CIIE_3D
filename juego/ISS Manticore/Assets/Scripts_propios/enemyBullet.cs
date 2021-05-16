@@ -28,6 +28,10 @@ public class enemyBullet : MonoBehaviour
         if (collision.gameObject.name == "Character")
         {
             PlayerStats.Instance.TakeDamage(1.0f);
+            if (PlayerStats.Instance.Health == 0)
+            {
+                GameOverMenu.Instance.Display();
+            }
             Debug.Log("Collided with player");
         }
         Destroy(gameObject);

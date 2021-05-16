@@ -53,6 +53,10 @@ public class spiderBot : MonoBehaviour
                 attacking = true;
                 attackDuration = attackLength;
                 PlayerStats.Instance.TakeDamage(0.25f);
+                if (PlayerStats.Instance.Health == 0)
+                {
+                    GameOverMenu.Instance.Display();
+                }
             } else
             {
                 navigator.ResetPath();

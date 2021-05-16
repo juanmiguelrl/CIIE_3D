@@ -165,7 +165,7 @@ public class robotAI : MonoBehaviour
             Vector3 startingPos = transform.position;
             //startingPos.y *= -20;
             startingPos += transform.forward * -3.0f;
-            startingPos += transform.up * 1.0f;
+            startingPos += transform.up * 0.5f;
             bullet = GameObject.Instantiate(bulletPrefab, startingPos, Quaternion.identity);
             //bullet.GetComponentInChildren<Transform>().Scale(20.0f, 20.0f, 20.0f);
             //bullet.GetComponentInChildren<Transform>().Rotate(0.0f, 180.0f, 0.0f);

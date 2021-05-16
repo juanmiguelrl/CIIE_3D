@@ -1712,7 +1712,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851600370}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -43.204}
+  m_LocalPosition: {x: 0, y: 0, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1621068375}
@@ -1720,7 +1720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 59.832, y: -204.84898}
+  m_AnchoredPosition: {x: 9, y: -204.84898}
   m_SizeDelta: {x: 288.106, y: 237.935}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &851600372
@@ -1755,10 +1755,11 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Movimiento:\n\tTeclas W A S D\n\tO flechas movimiento\nApuntado: Mediante
-    movimiento del raton\nDisparo: Click izquierdo\nRecargar: Tecla R\nPistola: Tecla
-    1\nRifle: Tecla 2\nInteractuar con palancas: Tecla E"
+    m_LineSpacing: 0.8
+  m_Text: "Movimiento:\n\tTeclas W A S D\n\tO flechas movimiento\nSalto: Tecla espaciadora\nApuntado:
+    Mediante movimiento del raton\nDisparo: Click izquierdo\nRecargar: Tecla R\nPistola:
+    Tecla 1\nRifle: Tecla 2\nTambien se puede cambiar de arma\n con la rueda del
+    raton\nInteractuar con palancas: Tecla E"
 --- !u!222 &851600373
 CanvasRenderer:
   m_ObjectHideFlags: 0

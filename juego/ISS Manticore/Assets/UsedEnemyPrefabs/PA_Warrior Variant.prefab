@@ -11,7 +11,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &776110458
 MonoBehaviour:
@@ -28,7 +28,7 @@ MonoBehaviour:
   animt: {fileID: 0}
   attackTimer: 5
   navigator: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 1782824343737523965, guid: 6ca000ead671ebe449deb210e0a19be8, type: 3}
   attacking: 0
 --- !u!195 &776110461
 NavMeshAgent:
@@ -61,7 +61,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: cc633396b5f95da4b916357a5508ee4f, type: 3}
       propertyPath: m_Name
-      value: PA_Warrior
+      value: PA_Warrior Variant
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cc633396b5f95da4b916357a5508ee4f, type: 3}
       propertyPath: m_Layer

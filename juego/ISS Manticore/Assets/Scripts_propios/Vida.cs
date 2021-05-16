@@ -13,6 +13,7 @@ public class Vida : MonoBehaviour
         if (c != null)
         {
             PlayerStats.Instance.Heal(numeroVidas);
+            Destroy(this.gameObject);
         }
     }
 

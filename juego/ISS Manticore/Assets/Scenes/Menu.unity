@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 105845200}
   - component: {fileID: 105845201}
   m_Layer: 5
-  m_Name: GamePlayWindow
+  m_Name: Creditos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -828,7 +828,7 @@ GameObject:
   - component: {fileID: 534467742}
   - component: {fileID: 534467741}
   m_Layer: 5
-  m_Name: Dificulty
+  m_Name: TextoCreditos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -953,11 +953,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Text
-      value: Continue
+      value: Nueva partida
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 628681774}
+    - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CargandoEscenario
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CargarEscenario, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Escenario1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Pivot.x
@@ -1049,6 +1081,19 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 628681771}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &628681774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628681772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028a28964e9b4db4ab815337c12d1b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nombre_escena: Escenario1
 --- !u!1001 &696120432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1571,6 +1616,10 @@ PrefabInstance:
     - target: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Name
       value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Text
@@ -2342,11 +2391,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Name
-      value: Newgame
+      value: Instrucciones
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Text
-      value: Nueva partida
+      value: Instrucciones
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2430,7 +2479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2775,6 +2824,10 @@ PrefabInstance:
     - target: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Name
       value: CargarEscenario
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Text

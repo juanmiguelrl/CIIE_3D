@@ -45,6 +45,7 @@
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\LiquidContainer.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_Rope.cs" />
      <Compile Include="Assets\Scripts_propios\LeverSystem.cs" />
+     <Compile Include="Assets\Scripts_propios\Objetivo.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\Wall Run\SFPSC_WallRun.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\LevelLayout\LevelRoomGroup.cs" />
      <Compile Include="Assets\Scripts_propios\Sistema.cs" />
@@ -88,7 +89,7 @@
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\StartCheckpoint.cs" />
      <Compile Include="Assets\Scripts_propios\MostrarReparacion.cs" />
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\TiltWindow.cs" />
-     <Compile Include="Assets\Robot.cs" />
+     <Compile Include="Assets\Scripts_propios\Robot.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\AmmoBox.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\WeaponInfoUI.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Helpers.cs" />

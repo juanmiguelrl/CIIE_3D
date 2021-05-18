@@ -37,9 +37,9 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Editor\CreateSceneMenu.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\Editor\GradientTextureEditor.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Editor\HideSkybox.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\Editor\GradientTextureEditor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/unity/2021.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -282,18 +282,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="YamlDotNet">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.visualscripting@1.5.2/Editor/VisualScripting.Core/Dependencies/YamlDotNet/YamlDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="IonicZip">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.visualscripting@1.5.2/Editor/VisualScripting.Core/Dependencies/DotNetZip/IonicZip.dll</HintPath>
-    </Reference>
-    <Reference Include="MiscUtil">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Tracker.dll</HintPath>
@@ -652,9 +640,6 @@
     <Reference Include="UnityEditor.TestRunner">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -667,29 +652,17 @@
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.Advertisements">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
-    <Reference Include="VSSettingsProvider">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/VSSettingsProvider.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
@@ -715,17 +688,11 @@
     <Reference Include="UnityEngine.SpatialTracking">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
@@ -753,9 +720,6 @@
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

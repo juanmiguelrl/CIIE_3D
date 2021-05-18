@@ -37,100 +37,100 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_KeyManager.cs" />
+     <Compile Include="Assets\Scripts_propios\Robot.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\TextAmmoDisplay.cs" />
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\ResizePanel.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\AmmoBox.cs" />
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\DragPanel.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\WeaponInfoUI.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\MinimapUI.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\Helpers.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Target.cs" />
      <Compile Include="Assets\Scripts_propios\VictoryMenu.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\GradientTexture.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\LiquidContainer.cs" />
+     <Compile Include="Assets\Scripts_propios\PauseMenu.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\Minimap\MinimapSystem.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_Rope.cs" />
-     <Compile Include="Assets\Scripts_propios\LeverSystem.cs" />
+     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_PlugScript.cs" />
      <Compile Include="Assets\Scripts_propios\Objetivo.cs" />
+     <Compile Include="Assets\Scripts_propios\LeverSystem.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\Wall Run\SFPSC_WallRun.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\CameraShaker.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\LevelLayout\LevelRoomGroup.cs" />
      <Compile Include="Assets\Scripts_propios\Sistema.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_PlayerMovement.cs" />
+     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\PanelManager.cs" />
+     <Compile Include="Assets\Otros\Unity UI Samples\Scripts\ApplicationManager.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Projectile.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\PoolSystem.cs" />
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
+     <Compile Include="Assets\Scripts_propios\gancho2.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\KeyLockSystem\Lock.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\Grappling Hook\SFPSC_GrapplingHook.cs" />
+     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_HeroInteractive.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\EnableObjectAction.cs" />
+     <Compile Include="Assets\Scripts_propios\Vida.cs" />
      <Compile Include="Assets\Scripts_propios\EnemyAi.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\Audio\WorldAudioPool.cs" />
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\DragMe.cs" />
      <Compile Include="Assets\Scripts_propios\CargarEscenario.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Audio\UIAudioPlayer.cs" />
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts_propios\Repair_zone.cs" />
+     <Compile Include="Assets\Scripts_propios\movingPlatform.cs" />
+     <Compile Include="Assets\Otros\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\Otros\SpaceSkies Free\Demo\Scripts\LookCamera.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\TargetChecker.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\Minimap\MinimapElement.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\KeyLockSystem\Keychain.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\EndCheckpoint.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\KeyLockSystem\Key.cs" />
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\DropMe.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\LiquidAmmoDisplay.cs" />
-     <Compile Include="Assets\Scripts_propios\gancho.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\Audio\RandomPlayer.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\GameAction.cs" />
-     <Compile Include="Assets\Scripts_propios\plataformaMovimiento.cs" />
-     <Compile Include="Assets\Scripts_propios\Spawner.cs" />
-     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_HeroController.cs" />
-     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_Button.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\MovingAction.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\LevelLayout\LevelRoom.cs" />
-     <Compile Include="Assets\Scripts_propios\Lever.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\ImpactManager.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\WeaponAnimationEventHandler.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\TargetSpawner.cs" />
-     <Compile Include="Assets\Scripts_propios\GameSystemOld.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\FinalScoreUI.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\RestartLevel.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Weapon.cs" />
-     <Compile Include="Assets\Scripts_propios\robotAI.cs" />
-     <Compile Include="Assets\Scripts_propios\robotEnemy.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\StartCheckpoint.cs" />
-     <Compile Include="Assets\Scripts_propios\MostrarReparacion.cs" />
-     <Compile Include="Assets\Otros\Unity UI Samples\Scripts\TiltWindow.cs" />
-     <Compile Include="Assets\Scripts_propios\Robot.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\AmmoBox.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\WeaponInfoUI.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\Helpers.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Target.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\GradientTexture.cs" />
-     <Compile Include="Assets\Scripts_propios\PauseMenu.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\Minimap\MinimapSystem.cs" />
-     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_PlugScript.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\CameraShaker.cs" />
-     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-     <Compile Include="Assets\Otros\Unity UI Samples\Scripts\ApplicationManager.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Projectile.cs" />
-     <Compile Include="Assets\Scripts_propios\gancho2.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\KeyLockSystem\Lock.cs" />
-     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_HeroInteractive.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\EnableObjectAction.cs" />
-     <Compile Include="Assets\Scripts_propios\Vida.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\Audio\WorldAudioPool.cs" />
-     <Compile Include="Assets\Scripts_propios\movingPlatform.cs" />
-     <Compile Include="Assets\Otros\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
-     <Compile Include="Assets\Creator Kit - FPS\Scripts\KeyLockSystem\Keychain.cs" />
      <Compile Include="Assets\Scripts_propios\GameSystemInfo.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\LiquidAmmoDisplay.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\DissolveAction.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\FullscreenMap.cs" />
      <Compile Include="Assets\Scripts_propios\enemyBullet.cs" />
      <Compile Include="Assets\Scripts_propios\spiderBot.cs" />
      <Compile Include="Assets\HealthHeartSystem\Scripts\HealthBarController.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\GameDatabase.cs" />
+     <Compile Include="Assets\Scripts_propios\gancho.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\Audio\RandomPlayer.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\GameAction.cs" />
+     <Compile Include="Assets\Scripts_propios\plataformaMovimiento.cs" />
+     <Compile Include="Assets\Scripts_propios\Spawner.cs" />
+     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_Button.cs" />
+     <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_HeroController.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\TriggerActionsSystem\MovingAction.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Controller.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\LevelLayout\LevelRoom.cs" />
+     <Compile Include="Assets\Scripts_propios\Lever.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\Effects\ImpactManager.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\WeaponAnimationEventHandler.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\TargetSpawner.cs" />
+     <Compile Include="Assets\Scripts_propios\GameSystemOld.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_DoorKey.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\FinalScoreUI.cs" />
      <Compile Include="Assets\Scripts_propios\GanchoEscenario3.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\LevelSelectionUI.cs" />
      <Compile Include="Assets\Scripts_propios\GameOverMenu.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\UI\RestartLevel.cs" />
      <Compile Include="Assets\HealthHeartSystem\Scripts\PlayerStats.cs" />
      <Compile Include="Assets\Scripts_propios\ChangeScene.cs" />
      <Compile Include="Assets\Scripts_propios\GameSystem.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\Weapon.cs" />
+     <Compile Include="Assets\Scripts_propios\robotAI.cs" />
      <Compile Include="Assets\Otros\SpaceSkies Free\Demo\Scripts\SkyboxChanger.cs" />
      <Compile Include="Assets\HealthHeartSystem\Scripts\HealthBarHUDTester.cs" />
      <Compile Include="Assets\Creator Kit - FPS\Scripts\LevelLayout\LevelLayout.cs" />
+     <Compile Include="Assets\Scripts_propios\robotEnemy.cs" />
      <Compile Include="Assets\Otros\Unity UI Samples\Scripts\ChangeColor.cs" />
+     <Compile Include="Assets\Creator Kit - FPS\Scripts\System\StartCheckpoint.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_DoorScript.cs" />
+     <Compile Include="Assets\Scripts_propios\MostrarReparacion.cs" />
+     <Compile Include="Assets\Otros\Unity UI Samples\Scripts\TiltWindow.cs" />
      <Compile Include="Assets\Simple FPS Controller\Scripts\SFPSC_FPSCamera.cs" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Acid.shader" />
      <None Include="Assets\Creator Kit - FPS\Art\Shaders\Brain.shader" />
@@ -385,12 +385,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="MiscUtil">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Tracker.dll</HintPath>
@@ -740,9 +734,6 @@
     <Reference Include="System.Xml.Serialization">
         <HintPath>D:/unity/2021.1.3f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -755,29 +746,17 @@
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.Advertisements">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
-    <Reference Include="VSSettingsProvider">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/VSSettingsProvider.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
@@ -803,17 +782,11 @@
     <Reference Include="UnityEngine.SpatialTracking">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
@@ -841,9 +814,6 @@
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
         <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-        <HintPath>D:/Escritorio/CIIE_3D/CIIE_3D/juego/ISS Manticore/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

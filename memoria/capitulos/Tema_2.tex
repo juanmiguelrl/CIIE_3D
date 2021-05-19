@@ -312,7 +312,7 @@ Cada vez que se elimina a un enemigo se suma un punto a la puntuación del jugad
 En cuanto al sistema de palancas, se utiliza el prefab de la palanca y su correspondiente animación, visible cuando el personaje la acciona. Se ha modificado el script propio de la palanca para obtener Lever con el comportamiento deseado. Además, se ha creado otro script nuevo para el sistema, denominado LeverSystem, que permite que, al añadir a la escena tantas palancas como se deseen, solo se abra la puerta cuando todas y cada una de ellas estén accionadas.
 
 \subsubsection{Sistema de vidas}
-El sistema de vidas gestiona la salud del personaje, cuando una bala de un bot enemy golpea al personaje, este pierde una vida. En cambio, cuando es un spiderbot el que alcanza al personaje, este se queda sin un cuarto de vida. También permite al personaje recuperar vida cuando este recoge un ítem de vida. Cuando el personaje se queda sin vidas el sistema muestra el menú de Game Over donde el jugador puede escoger entre reiniciar el nivel en el que se encuentra, volver al menú principal o abandonar el juego.
+El sistema de vidas gestiona la salud del personaje, cuando una bala de un bot enemy golpea al personaje, este pierde un 10\% de su salud. En cambio, cuando es un spiderbot el que alcanza al personaje, este se queda sin un 5\% de su salud. También permite al personaje recuperar vitalidad cuando este recoge un ítem de vida. Cuando el personaje se queda sin vida el sistema muestra el menú de Game Over donde el jugador puede escoger entre reiniciar el nivel en el que se encuentra, volver al menú principal o abandonar el juego.
 
 \subsubsection{Items de recuperación de munición y vida}
 Para estos items se ha utilizado utilizado unos modelos con forma de maletines, para la munición se utiliza el script ``Ammo Box'' del ``Creator Kit: FPS'', y recupera 10 unidades de munición.
@@ -360,13 +360,20 @@ El menú principal consta de 3 botones como se muestra en la Figura \ref{fig:Men
 	\caption{\label{fig:MenuPrincipal3D1}Ejemplo del Menu Principal}
 \end{figure}
 
+
 Detalles de cada opción del menu presentado en la Figura \ref{fig:MenuPrincipal3D1}:
 \begin{itemize}
-	\item \textbf{Nueva Partida:} Activa una segunda ventana en el menú con una explicación de los controles del juego y un botón ``Continuar al juego'' que lleva al nivel 1 como se muestra en la Figura \ref{fig:MenuPrincipalNuevaPartida}.
+	\item \textbf{Nueva Partida:} Lleva al jugador al nivel 1 como se muestra en la Figura \ref{fig:Nivel13D}.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.40]{imagenes/MenuPrincipalNuevaPartida.png}
-		\caption{\label{fig:MenuPrincipalNuevaPartida}Apartado Nueva partida del Menu Principal}
+		\includegraphics[scale=0.40]{imagenes/Nivel13D.png}
+		\caption{\label{fig:Nivel13D}Imagen del nivel 1}
+	\end{figure}
+	\item \textbf{Instrucciones:} Activa una segunda ventana en el menú con una explicación de los controles del juego
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.35]{imagenes/MenuPrincipalInstrucciones.png}
+		\caption{\label{fig:MenuPrincipalInstrucciones}Ejemplo del Menu Instrucciones}
 	\end{figure}
 	\item \textbf{Créditos:} Activa una segunda ventana en el menú con los créditos del juego y un botón ``cerrar'' para cerrar esta ventana como se muestra en la Figura \ref{fig:MenuPrincipalCreditos}.
 	\begin{figure}[H]
@@ -415,7 +422,7 @@ El menú de pausa consta de tres botones para que el jugador pueda elegir una de
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.85]{imagenes/MenuPausa.png}
+	\includegraphics[scale=0.45]{imagenes/MenuPausa.png}
 	\caption{\label{fig:MenuPausa}Ejemplo de la pantalla de pausa}
 \end{figure}
 
@@ -436,7 +443,7 @@ Para el diseño de este escenario se han utilizado los Prefabs que proporcionan 
 	\item \textbf{SpaceSkies Free:} Se utiliza uno de sus assets como skybox
 	\item \textbf{Federation Corvette F3:} Se utiliza como base del escenario
 	\item \textbf{Interactive Physical Door Pack:} Se utiliza como base para crear las palancas
-	\item \textbf{Simple Heart Health System:} Se utiliza como base para crear el sistema de vidas
+	\item \textbf{ProgressBar Pack:} Se utiliza como base para crear el sistema de vidas
 	\item \textbf{Enemy Robots:} Se utilizan para los modelos de los enemigos
 \end{itemize}
 
@@ -455,7 +462,7 @@ Para el diseño de este escenario se han utilizado los Prefabs que proporcionan 
 	\item \textbf{Creator kit - FPS:} Se utiliza como base para el personaje,su controlador, el sistema de disparos, el menú de pausa y el HUD
 	\item \textbf{SpaceSkies Free:} Se utiliza uno de sus assets como skybox
 	\item \textbf{Federation Corvette F3:} Se utiliza como base del escenario
-	\item \textbf{Simple Heart Health System:} Se utiliza como base para crear el sistema de vidas
+	\item \textbf{ProgressBar Pack:} Se utiliza como base para crear el sistema de vidas
 	\item \textbf{Sci-Fi Styled Modular Pack:} Se utiliza como base para la construcción del escenario encima de la nave, con el generador y los pasillos
 	\item \textbf{SciFi Enemies and Vehicles:} Se utiliza para el modelo del enemigo con sus animaciones de ataque y persecución
 	\item \textbf{Boxes pack:} Se utiliza para las cajas de munición y vida
@@ -473,7 +480,7 @@ Para el diseño de este escenario se han utilizado los Prefabs que proporcionan 
 	\item \textbf{SpaceSkies Free:} Se utiliza uno de sus assets como skybox
 	\item \textbf{Federation Corvette F3:} Se utiliza como base del escenario
 	\item \textbf{Sci-Fi Styled Modular Pack:} Se utiliza para los modelos de las plataformas móviles
-	\item \textbf{Simple Heart Health System:} Se utiliza como base para crear el sistema de vidas
+	\item \textbf{ProgressBar Pack:} Se utiliza como base para crear el sistema de vidas
 	\item \textbf{Destructor Spaceship:} Se utiliza para el modelo de nave a la que tiene que llegar el personaje
 \end{itemize}
 

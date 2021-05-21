@@ -1,0 +1,466 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plantilla TFG/TFM
+% Universidad de A Coruña. Facultad de Informática
+% Realizado por: Welton Vieira dos Santos
+% Modificado: Welton Vieira dos Santos
+% Contacto: welton.dossantos@udc.es
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Modelos de recuperación (Retrieval Models)}
+\section{Resumen de los modelos de recuperación}
+
+Durante los últimos 45 años de investigación de recuperación de información, uno de los objetivos principales ha sido comprender y formalizar los procesos que subyacen a una persona que toma la decisión de que un fragmento de texto es relevante para su necesidad de información. Para desarrollar una comprensión completa probablemente se requiera entender cómo el lenguaje
+está representado y procesado en el cerebro humano, y estamos muy lejos de eso. Sin embargo, podemos proponer teorías sobre la relevancia en forma de modelos de recuperación matemática y probar esas teorías comparándolas con las acciones humanas. Los buenos modelos deberían producir resultados que se correlacionen bien con las decisiones humanas sobre la relevancia. Para decirlo de otra manera, los algoritmos de clasificación basados ​​en buenos modelos de recuperación recuperarán documentos relevantes cerca de la parte superior de la clasificación (y, en consecuencia, tendrán una alta eficacia).
+
+
+¿Qué tan exitoso ha sido el modelado? Como ejemplo, los algoritmos de clasificación para la búsqueda general mejoraron en efectividad en más del 100\% en la década de 1990, según lo medido utilizando las colecciones de pruebas TREC. Estos cambios en la efectividad correspondieron a mejoras en los modelos de recuperación asociados. La efectividad de la búsqueda web también ha mejorado sustancialmente en los últimos 10 años. En experimentos con colecciones web de TREC, los algoritmos de clasificación más efectivos provienen de modelos de recuperación bien definidos. En el caso de los motores de búsqueda web comerciales, es menos claro cuáles son los modelos de recuperación, pero no hay duda de que los algoritmos de clasificación se basan en bases matemáticas sólidas.
+
+Es posible desarrollar algoritmos de clasificación sin un modelo de recuperación explícito a través de prueba y error. Sin embargo, el uso de un modelo de recuperación generalmente ha demostrado ser el mejor enfoque. Los modelos de recuperación, como todos los modelos matemáticos, proporcionan un marco para definir nuevas tareas y explicar suposiciones. Cuando se observan problemas con un algoritmo de clasificación, el modelo de recuperación proporciona una estructura para probar alternativas que serán mucho más eficientes que un enfoque de fuerza bruta (pruebe todo).
+
+En esta discusión, no debemos pasar por alto el hecho de que la relevancia es un concepto complejo. Es bastante difícil para una persona explicar por qué un documento es más relevante que otro, y cuando se les pide a las personas que juzguen la relevancia de los documentos para una consulta determinada, a menudo pueden estar en desacuerdo. Los científicos de la información han escrito volúmenes sobre la naturaleza de la relevancia, pero no profundizaremos en ese material aquí. En su lugar, discutimos dos aspectos clave de relevancia que son importantes tanto para los modelos de recuperación como para las medidas de evaluación.
+
+
+El primer aspecto es la diferencia entre relevancia tópica y de usuario, que se mencionó en la sección 1.1. Un documento es tópicamente relevante para una consulta si se considera que está en el mismo tema. En otras palabras, la consulta y el documento son casi lo mismo. Una página web que contenga una biografía de Abraham Lincoln sería ciertamente relevante para la consulta "Abraham Lincoln", y también sería relevante para las consultas "EE.UU. presidentes "y" guerra civil ". La relevancia del usuario tiene en cuenta todos los demás factores que intervienen en el juicio de relevancia del usuario. Esto puede incluir la antigüedad del documento, el idioma del documento, la audiencia objetivo, la novedad del documento, etc. Un documento que contenga solo una lista de todos los presidentes de los Estados Unidos, por ejemplo, sería tópicamente relevante para la consulta "Abraham Lincoln", pero podría no considerarse relevante para la persona que presentó la consulta porque buscaban más detalles sobre la vida de Lincoln. Los modelos de recuperación no pueden incorporar todos los factores adicionales involucrados en la relevancia del usuario, pero algunos sí toman en cuenta estos factores.
+
+El segundo aspecto de relevancia que consideramos es si es binario o multivalor. La relevancia binaria simplemente significa que un documento es relevante o no relevante. Parece obvio que algunos documentos son menos relevantes que otros, pero aún más relevantes que los documentos que están completamente fuera del tema. Por ejemplo, podemos considerar que el documento que contiene una lista de presidentes de Estados Unidos es menos
+tópicamente relevante que la biografía de Lincoln, pero ciertamente más relevante que un anuncio de un automóvil Lincoln. Basados ​​en esta observación, algunos modelos de recuperación y medidas de evaluación introducen explícitamente la relevancia como una variable multivalor. Los múltiples niveles de relevancia son ciertamente importantes en la evaluación, cuando se les pide a las personas que juzguen la relevancia. Se ha demostrado que tener solo tres niveles (relevante, no relevante, inseguro) facilita mucho la tarea de los jueces. En el caso de los modelos de recuperación, sin embargo, las ventajas de los niveles múltiples son menos claras. Esto se debe a que la mayoría de los algoritmos de clasificación calculan una probabilidad de relevancia y pueden representar la incertidumbre involucrada. Muchos modelos de recuperación han sido propuestos a lo largo de los años. Dos de los más antiguos son los modelos booleanos y de espacio vectorial. Si bien estos modelos han sido superados en gran medida por enfoques probabilísticos, a menudo se mencionan en las discusiones sobre la recuperación de información, por lo que los describimos brevemente antes de entrar en los detalles de otros modelos.
+
+\subsection{Recuperación booleana}
+
+El modelo de recuperación booleana fue utilizado por los primeros motores de búsqueda y todavía se usa en la actualidad. También se conoce como recuperación de coincidencia exacta, ya que los documentos se recuperan si coinciden exactamente con la especificación de la consulta y, de lo contrario, no se recuperan. Aunque esto define una forma muy simple de clasificación, la recuperación booleana no se describe generalmente como un algoritmo de clasificación. Esto se debe a que el modelo de recuperación booleana asume que todos los documentos en el conjunto recuperado son equivalentes en términos de relevancia, además de la suposición de que la relevancia es binaria. El nombre booleano proviene del hecho de que solo hay dos resultados posibles para la evaluación de la consulta (VERDADERO y FALSO) y porque la consulta generalmente se especifica utilizando operadores de lógica booleana (AND, OR, NOT). Como se mencionó en el Capítulo 6, los operadores de proximidad y los caracteres comodín también se usan comúnmente en las consultas booleanas. Buscar con una utilidad de expresión regular como grep es otro ejemplo de recuperación de coincidencia exacta.
+
+
+Hay algunas ventajas para la recuperación booleana. Los resultados del modelo son muy predecibles y fáciles de explicar a los usuarios. Los operandos de una consulta booleana pueden ser cualquier característica del documento, no solo palabras, por lo que es fácil incorporar metadatos como la fecha del documento o el tipo de documento en la especificación de la consulta. Desde el punto de vista de la implementación, la recuperación booleana suele ser más eficiente que la recuperación clasificada porque los documentos pueden eliminarse rápidamente de la consideración en el proceso de puntuación.
+
+
+A pesar de estos aspectos positivos, el principal inconveniente de este enfoque de búsqueda es que la efectividad depende completamente del usuario. Debido a la falta de un algoritmo de clasificación sofisticado, las consultas simples no funcionarán bien. Se recuperarán todos los documentos que contengan las palabras de consulta especificadas, y este conjunto recuperado se presentará al usuario en algún orden, como por fecha de publicación, que tiene poco que ver con la relevancia. Es posible construir consultas booleanas complejas que limiten el conjunto recuperado a documentos mayormente relevantes, pero esta es una tarea difícil que requiere una experiencia considerable. En respuesta a la dificultad de formular consultas, una clase de usuarios conocidos como intermediarios de búsqueda (mencionados en el último capítulo) se asociaron con los sistemas de búsqueda booleanos. La tarea de un intermediario es traducir la necesidad de información de un usuario en una consulta booleana compleja para un motor de búsqueda particular. Los intermediarios todavía se utilizan en algunas áreas especializadas, como en las oficinas legales. Sin embargo, la simplicidad y efectividad de los motores de búsqueda modernos ha permitido a la mayoría de las personas hacer sus propias búsquedas. 
+
+Como ejemplo de la formulación de consultas booleanas, considere las siguientes consultas para un motor de búsqueda que ha indexado una colección de noticias. La consulta simple:
+
+\begin{center}
+	\begin{minipage}{13cm}	
+		\textbf{lincoln}\\
+	\end{minipage}\\
+\end{center}
+
+
+recuperaría una gran cantidad de documentos que mencionan automóviles y lugares de Lincoln llamados Lincoln además de historias sobre el presidente Lincoln. Todos estos documentos serían equivalentes en términos de clasificación en el modelo booleano de recuperación, independientemente de cuántas veces aparezca la palabra "lincoln" o en qué contexto se produce. Dado esto, el usuario puede intentar limitar el alcance de la búsqueda con la siguiente consulta:
+
+\begin{center}
+	\begin{minipage}{13cm}	
+		\textbf{president AND lincoln}\\
+	\end{minipage}\\
+\end{center}
+
+Esta consulta recuperará un conjunto de documentos que contienen ambas palabras, que aparecen en cualquier parte del documento. Si hay una serie de historias relacionadas con la administración de los automóviles Ford Motor Company y Lincoln, estos se recuperarán en el mismo conjunto que las historias sobre el presidente Lincoln, por ejemplo:
+
+\begin{center}
+	\begin{minipage}{13cm}	
+		Ford Motor Company today announced that Darryl Hazel will succeed\\
+		Brian Kelley as \textbf{president} of \textbf{Lincoln} Mercury.\\
+	\end{minipage}\\
+\end{center}
+
+Si se recuperaron suficientes de estos tipos de documentos, el usuario puede intentar eliminar los documentos sobre automóviles utilizando el operador NOT, de la siguiente manera:
+
+\begin{center}
+	\begin{minipage}{13cm}	
+		president AND lincoln AND NOT (automobile OR car)\\
+	\end{minipage}\\
+\end{center}
+
+Esto eliminaría cualquier documento que contenga una sola mención de las palabras “automobile” o “car” en cualquier parte del documento. El uso del operador NO, en general, elimina demasiados documentos relevantes junto con documentos no relevantes y no se recomienda. Por ejemplo, uno de los documentos mejor clasificados en una búsqueda en la web de "President Lincoln" fue una biografía que contiene la frase:
+
+\begin{center}
+	\begin{minipage}{13cm}	
+		Lincoln’s body departs Washington in a nine-car funeral train.\\
+	\end{minipage}\\
+\end{center}
+
+El uso de NOT (automobile OR car) en la consulta habría eliminado este documento. Si el conjunto recuperado todavía es demasiado grande, el usuario puede intentar restringir aún más la consulta agregando palabras adicionales que deberían aparecer en las biografías:
+
+\begin{center}
+	\begin{minipage}{13cm}	
+		president AND lincoln AND biography AND life AND birthplace AND gettysburg AND NOT (automobile OR car)\\
+	\end{minipage}\\
+\end{center}
+
+Desafortunadamente, en un motor de búsqueda booleano, poner demasiados términos de búsqueda en la consulta con el operador AND a menudo no hace que se recupere nada. Para evitar esto, el usuario puede intentar usar un OR en su lugar:
+
+\begin{center}
+	\begin{minipage}{13cm}	
+		president AND lincoln AND (biography OR life OR birthplace OR gettysburg) AND NOT (automobile OR car)\\
+	\end{minipage}\\
+\end{center}
+
+Esto recuperará cualquier documento que contenga las palabras "president" y "lincoln", junto con cualquiera de las palabras "biography", "life", "birthplace" o "gettysburg" (y no menciona "automobile" o "car").”). Después de todo esto, tenemos una consulta que puede hacer un trabajo razonable para recuperar un conjunto que contiene algunos documentos relevantes, pero aún no podemos especificar qué palabras son más importantes o que tener más de las palabras asociadas es mejor que cualquiera de ellas . Por ejemplo, un documento que contiene el siguiente texto fue recuperado en el rango 500 mediante una búsqueda en la web (que utiliza medidas de importancia de palabras):
+
+\begin{center}
+	\begin{minipage}{13cm}	
+		President’s Day - Holiday activities - crafts, mazes, word searches, ... “The Life of Washington” Read the entire book online! Abraham Lincoln Research Site ...
+	\end{minipage}\\
+\end{center}
+
+Un sistema de recuperación booleano no haría distinción entre este documento y los otros 499 que están clasificados más arriba por el motor de búsqueda web. Podría, por ejemplo, ser el primer documento en la lista de resultados.
+El proceso de desarrollo de consultas con un enfoque en el tamaño del conjunto recuperado se ha llamado búsqueda por números, y es una consecuencia de las limitaciones del modelo de recuperación booleano. Para abordar estas limitaciones, los investigadores desarrollaron modelos, como el modelo de espacio vectorial, que incorporan clasificación.
+
+\subsection{El modelo de espacio vectorial}
+
+El modelo de espacio vectorial fue la base de la mayoría de las investigaciones sobre recuperación de información en las décadas de 1960 y 1970, y los documentos que utilizan este modelo continúan apareciendo en conferencias. Tiene la ventaja de ser un marco simple e intuitivamente atractivo para implementar la ponderación de términos, la clasificación y los comentarios de relevancia.
+Históricamente, fue muy importante en la introducción de estos conceptos, y se han desarrollado técnicas efectivas a través de años de experimentación. Como modelo de recuperación, sin embargo, tiene fallas importantes. Aunque proporciona un marco de cómputo conveniente, proporciona poca orientación sobre los detalles de cómo los algoritmos de ponderación y clasificación están relacionados con la relevancia.
+
+En este modelo, se asume que los documentos y las consultas forman parte de un espacio vectorial \textit{t-dimensional}, donde \textit{t} es el número de términos de índice (palabras, vástagos, frases, etc.). Un documento $ D_i $ está representado por un vector de términos de índice: $$D_i=(d_{i1},d_{i2},\dots ,d_{it}),$$
+donde $ d_{ij} $ representa el peso del término \textit{j}. Una colección de documentos que contiene \textit{n} documentos puede representarse como una matriz de ponderaciones de término(Tabla \ref{tab:MatrizPonderacion}), donde cada fila representa un documento y cada columna describe las ponderaciones asignadas a un término para un documento en particular:
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{c|cccc}
+			
+			 & $Term_1$ & $Term_2$ & $\cdots$ & $Term_t$ \\ \hline
+			$Doc_1$ & $d_{11}$ & $d_{12}$ & $\cdots$ & $d_{1t}$ \\ 
+			$Doc_2$ & $d_{21}$ & $d_{22}$ & $\cdots$ & $d_{2t}$ \\ 
+			$\vdots$ & $\vdots$ & $\vdots$ & $\cdots$ & $\vdots$ \\ 
+			$Doc_n$ & $d_{n1}$ & $d_{n2}$ & $\cdots$ & $d_{nt}$ \\ \hline
+		\end{tabular}
+	\end{center}
+	\caption{\label{tab:MatrizPonderacion}Representación de una matriz de ponderaciones de terminos}
+\end{table}
+
+La figura \ref{fig:MatrizDocumentos} da un ejemplo simple de la representación vectorial de cuatro documentos. La matriz de términos y documentos se ha girado para que ahora los términos sean las filas y los documentos las columnas. Los términos ponderaciones son simplemente el recuento de los términos en el documento. Las palabras vacías no están indexadas en este ejemplo, y las palabras han sido derivadas. El documento $D_3$, por ejemplo, está representado por el vector $(1, 1, 0, 2, 0, 1, 0, 1, 0, 0, 1)$.
+
+Las consultas se representan de la misma manera que los documentos. Es decir, una consulta $Q$ está representada por un vector de $t$ pesos:
+$$Q=(q_1,q_2,\dots ,q_t)$$
+
+donde $q_j$ es el peso del término $j$ en la consulta. Si, por ejemplo, la consulta fuera ``tropical fish'', entonces, utilizando la representación vectorial en la Figura \ref{fig:MatrizDocumentos}, la consulta sería $(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1)$. Uno de los aspectos atractivos del modelo de espacio vectorial es el uso de diagramas simples para visualizar los documentos y las consultas. Por lo general, se muestran como puntos o vectores en una imagen tridimensional, como en la Figura \ref{fig:VectorRepresentacion}. Aunque esto puede ser útil para la enseñanza, es engañoso pensar que una intuición desarrollada utilizando tres dimensiones se puede aplicar al espacio real de documentos de alta dimensión. Recuerde que los términos t representan todas las características del documento que están indexadas. En aplicaciones empresariales y web, esto corresponde a cientos de miles o incluso \textit{millones} de dimensiones.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{imagenes/MatrizDocumentos.png}
+	\caption{\label{fig:MatrizDocumentos}Matriz de documentos para una colección de cuatro documentos}
+\end{figure}
+
+Dada esta representación, los documentos podrían clasificarse calculando la distancia entre los puntos que representan los documentos y la consulta. Con mayor frecuencia, se usa una \textit{medida de similitud} (en lugar de una medida de distancia o \textit{disimilitud}), de modo que los documentos con las puntuaciones más altas son los más similares a la consulta. Se han propuesto y probado varias medidas de similitud para este propósito. El más exitoso de estos es la medida de similitud de \textit{correlación coseno}. La correlación coseno mide el coseno del ángulo entre la consulta y los vectores del documento. Cuando los vectores se \textit{normalizan} para que todos los documentos y consultas estén representados por vectores de igual longitud, el coseno del ángulo entre dos vectores idénticos será 1 (el ángulo es cero), y para dos vectores que no comparten ningún valor distinto de cero términos, el coseno será 0. La medida del coseno se define como:
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{imagenes/MatrizDocumentos.png}
+	\caption{\label{fig:VectorRepresentacion}Representación vectorial de documentos y consultas.}
+\end{figure}
+
+$$Cosine(D_i,Q)=\dfrac{\sum_{j=1}^{t}d_{i,j}\cdot q_j}{\sqrt{\sum_{j=1}^{t}d_{i,j}^2\cdot \sum_{j=1}^{t}q_{j}^2}}$$
+
+El numerador de esta medida es la suma de los productos de los pesos de término para la consulta coincidente y los términos del documento (conocido como \textit{producto de punto} o \textit{producto interno}). El denominador normaliza esta puntuación dividiendo por el producto de las longitudes de los dos vectores. No existe una razón teórica por la cual la correlación del coseno debería preferirse a otras medidas de similitud, pero sí funciona un poco mejor en las evaluaciones de la calidad de búsqueda.
+
+Como ejemplo, considere dos documentos $D_1 = (0.5, 0.8, 0.3)$ y $D_2 =
+(0.9, 0.4, 0.2)$ indexado por tres términos, donde los números representan ponderaciones de término. Dada la consulta $Q = (1.5, 1.0, 0)$ indexada por los mismos términos, las medidas de coseno para los dos documentos son:
+
+$$Cosine(D_1,Q)=\frac{(0.5 \cdot 1.5) + (0.8 \cdot 1.0) }{\sqrt{(0.9^2+0.4^2+0.2^2) \cdot (1.5^2+1.0^2)}}=\frac{1.55}{\sqrt{(0.98 \cdot 3.25)}}=0.87$$
+
+$$Cosine(D_2,Q)=\frac{(0.9 \cdot 1.5) + (0.4 \cdot 1.0) }{\sqrt{(0.9^2+0.4^2+0.2^2) \cdot (1.5^2+1.0^2)}}=\frac{1.75}{\sqrt{(1.01 \cdot 3.25)}}=0.97$$
+
+
+El segundo documento tiene una puntuación más alta porque tiene un peso alto para el primer término, que también tiene un peso alto en la consulta. Incluso este simple ejemplo muestra que la clasificación basada en el modelo de espacio vectorial puede reflejar la importancia del término y el número de términos coincidentes, lo que no es posible en la recuperación booleana.
+
+En esta discusión, todavía tenemos que decir algo sobre la forma del término ponderación utilizada en el modelo de espacio vectorial. De hecho, se han probado muchos esquemas de ponderación diferentes a lo largo de los años. La mayoría de estas son variaciones de la ponderación $t_f \cdot id_f$, que se describió brevemente en el Capítulo 2. El término componente de frecuencia, $t_f$, refleja la importancia de un término en un documento $D_i$ (o consulta(query)). Esto generalmente se calcula como un recuento normalizado de las ocurrencias de términos en un documento, por ejemplo, por
+
+$$tf_{ik}=\frac{f_{ik}}{\sum_{j=1}^{t}f_{ij}}$$
+
+donde tfik es el término frecuencia peso del término k en el documento $D_i$, y $f_{ik}$ es el número de apariciones del término $k$ en el documento. En el modelo de espacio vectorial, la normalización es parte de la medida del coseno. Una colección de documentos puede contener documentos de diferentes longitudes. Aunque la normalización explica esto hasta cierto punto, los documentos largos pueden tener muchos términos una vez y otros cientos de veces. Los experimentos de recuperación han demostrado que para reducir el impacto de estos términos frecuentes, es efectivo usar el logaritmo del número de apariciones de términos en $t_f$ pesos en lugar del recuento bruto.
+
+El componente de frecuencia de documento inverso (idf) refleja la importancia del término en la recopilación de documentos. Cuantos más documentos tenga un término, menos discriminatorio será el término entre documentos y, en consecuencia, menos útil será en la recuperación. La forma típica de este peso es
+
+$$idf_k = \log\frac{N}{n_k}$$
+
+
+donde $idf_k$ es el peso de frecuencia de documento inverso para el término $k$, $N$ es el número de documentos en la colección y $n_k$ es el número de documentos en los que aparece el término $k$. La forma de este peso fue desarrollada por la intuición y el experimento, aunque se puede argumentar que $id_f$ mide la cantidad de información que lleva el término, tal como se define en la teoría de la información (Robertson, 2004).
+
+Los efectos de estos dos pesos se combinan multiplicándolos (de ahí el nombre $tf \cdot idf$). La razón para combinarlos de esta manera es, una vez más, principalmente empírica. Dado esto, la forma típica de ponderación de término de documento en el modelo de espacio vectorial es:
+
+$$d_{ik} = \frac{(\log{(f_{ik})} + 1) \cdot \log{(\frac{N}{n_k})}}{\sqrt{\sum_{k=1}^{t}\left[ \right  (\log{(f_{ik})} + 1)\cdot \log{(\frac{N}{n_k})}]^2}}$$
+
+La forma de ponderación de término de consulta es esencialmente la misma. Agregar 1 al término componente de frecuencia garantiza que los términos con frecuencia 1 tengan un peso distinto de cero. Tenga en cuenta que, en este modelo, los pesos de los términos se calculan solo para los términos que aparecen en el documento (o consulta). Dado que la normalización de la medida del coseno se incorpora a los pesos, la puntuación de un documento se calcula utilizando simplemente el producto de puntos del documento y los vectores de consulta.
+
+Aunque no existe una definición explícita de relevancia en el modelo de espacio vectorial, existe una suposición implícita de que la relevancia está relacionada con la similitud de los vectores de consulta y documento. En otras palabras, los documentos ``más cercanos'' a la consulta tienen más probabilidades de ser relevantes. Este es principalmente un modelo de relevancia tópica, aunque las características relacionadas con la relevancia del usuario podrían incorporarse en la representación vectorial. No se asume si la relevancia es binaria o multivalor.
+
+En el último capítulo describimos los comentarios de relevancia, una técnica para la modificación de consultas basada en documentos relevantes identificados por el usuario. Esta técnica se introdujo por primera vez utilizando el modelo de espacio vectorial. El conocido \textit{algoritmo de Rocchio} (Rocchio, 1971) se basó en el concepto de una \textit{consulta óptima}, que maximiza la diferencia entre el vector promedio que representa los documentos relevantes y el vector promedio que representa los documentos no relevantes. Dado que normalmente solo se dispone de información de relevancia limitada, la forma más común (y efectiva) del algoritmo de Rocchio modifica los pesos iniciales en el vector de consulta $Q$ para producir una nueva consulta $Q'$ de acuerdo con
+
+$$q'_j = \alpha \cdot q_j + \beta\cdot \frac{1}{|Rel|} \sum_{D_i \in Rel} d_{ij} - \gamma\cdot \frac{1}{|Nonrel|} \sum_{D_i \in Rel}d_{ij}  $$
+
+donde $q_j$ es el peso inicial del término de consulta $j$, $Rel$ es el conjunto de documentos relevantes identificados, $Nonrel$ es el conjunto de documentos no relevantes, $|\cdot |$ da el tamaño de un conjunto, $d_{ij}$ es el peso del término $j$ en el documento $i$, y $\alpha$, $\beta$ y $\gamma$ son parámetros que controlan el efecto de cada componente. Estudios anteriores han demostrado que el conjunto de documentos no relevantes se aproxima mejor a todos los documentos no vistos (es decir, todos los documentos no identificados como relevantes), y que los valores razonables para los parámetros son 8, 16 y 4 para $\alpha$, $\beta$ y $\gamma$, respectivamente.
+
+Esta fórmula modifica los pesos de los términos de la consulta al agregar un componente basado en el peso promedio en los documentos relevantes y restando un componente basado en el peso promedio en los documentos no relevantes. Se eliminan los términos de consulta con pesos negativos. Esto da como resultado una consulta más larga o ampliada porque se agregarán términos que aparecen con frecuencia en los documentos relevantes pero no en la consulta original (es decir, tendrán pesos positivos distintos de cero en la consulta modificada). Para restringir la cantidad de expansión, normalmente solo se agregará a la consulta un cierto número (por ejemplo, 50) de los términos con los pesos promedio más altos en los documentos relevantes.
+
+\section{Modelos probabilísticos(Probabilistic Models)}
+
+Una de las características que debe proporcionar un modelo de recuperación es una declaración clara sobre los supuestos en los que se basa. Los enfoques de espacio booleano y vectorial hacen suposiciones implícitas sobre la relevancia y la representación del texto que impactan el diseño y la efectividad de los algoritmos de clasificación. La situación ideal sería mostrar que, dados los supuestos, un algoritmo de clasificación basado en el modelo de recuperación logrará una mejor efectividad que cualquier otro enfoque. Estas pruebas son realmente muy difíciles de obtener en la recuperación de información, ya que estamos tratando de formalizar una actividad humana compleja. La validez de un modelo de recuperación generalmente debe validarse empíricamente, en lugar de teóricamente.
+
+Una declaración teórica temprana sobre la efectividad, conocida como Principio de Clasificación de Probabilidad (Robertson, 1977/1997), alentó el desarrollo de modelos probabilísticos de recuperación, que son el paradigma dominante en la actualidad. Estos modelos han alcanzado este estado porque la teoría de la probabilidad es una base sólida para representar y manipular la incertidumbre que es una parte inherente del proceso de recuperación de información. El principio de clasificación de probabilidad, como se indicó originalmente, es el siguiente:
+
+\begin{center}
+	\begin{minipage}{13cm}	
+		Si la respuesta de un sistema de recuperación de referencia\footnote{Un ``sistema de recuperación de referencia'' ahora se llamaría un motor de búsqueda.} a cada solicitud es una clasificación de los documentos en la colección en orden de probabilidad decreciente de relevancia para el usuario que envió la solicitud, donde las probabilidades se estiman con la mayor precisión posible sobre la base de los datos Si se ha puesto a disposición del sistema para este propósito, la efectividad general del sistema para su usuario será la mejor que se pueda obtener en base a esos datos.
+	\end{minipage}\\
+\end{center}
+
+Dados algunos supuestos, como que la relevancia de un documento para una consulta es independiente de otros documentos, es posible demostrar que esta afirmación es verdadera, en el sentido de que la clasificación por probabilidad de relevancia maximizará la precisión, que es la proporción de documentos relevantes, en cualquier rango dado (por ejemplo, en los 10 documentos principales). Desafortunadamente, el Principio de clasificación de probabilidad no nos dice cómo calcular o estimar la probabilidad de relevancia. Existen muchos modelos de recuperación probabilística, y cada uno propone un método diferente para estimar esta probabilidad. La mayor parte del resto de este capítulo analiza algunos de los modelos probabilísticos más importantes.
+
+En esta sección, comenzamos con un modelo probabilístico simple basado en tratar la recuperación de información como un problema de clasificación. Luego describimos un algoritmo de clasificación popular y efectivo que se basa en este modelo.
+
+\subsection{Recuperación de información como clasificación}
+
+En cualquier modelo de recuperación que asuma que la relevancia es binaria, habrá dos conjuntos de documentos, los documentos relevantes y los documentos no relevantes, para cada consulta. Dado un nuevo documento, la tarea de un motor de búsqueda podría describirse como decidir si el documento pertenece al conjunto relevante o al conjunto no relevante\footnote{Tenga en cuenta que nunca hablamos de documentos ``irrelevantes'' en la recuperación de información; en cambio son ``no relevantes''.}. Es decir, el sistema debe clasificar el documento como relevante o no relevante, y recuperarlo si es relevante.
+
+Dada alguna forma de calcular la probabilidad de que el documento sea relevante y la probabilidad de que no sea relevante, parecería razonable clasificar el documento en el conjunto que tiene la mayor probabilidad. En otras palabras, decidiríamos que un documento es relevante si $P (R | D)> P (NR | D)$, donde $P (R | D)$ es una probabilidad condicional que representa la probabilidad de relevancia dada la representación de ese documento, y $P (NR | D)$ es la probabilidad condicional de no relevancia (Figura \ref{fig:Ejemplo_Clasificacion_Relevante}). Esto se conoce como la regla de decisión de Bayes, y un sistema que clasifica los documentos de esta manera se llama clasificador de Bayes.
+
+En el Capítulo 9, discutimos otras aplicaciones de clasificación (como el filtrado de spam) y otras técnicas de clasificación, pero aquí nos centramos en el algoritmo de clasificación que resulta de este modelo de recuperación probabilístico basado en la clasificación.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{imagenes/Ejemplo_Clasificacion_Relevante.png}
+	\caption{\label{fig:Ejemplo_Clasificacion_Relevante}Representación vectorial de documentos y consultas.}
+\end{figure}
+
+La pregunta que nos enfrentamos ahora es cómo calcular estas probabilidades. Para empezar, centrémonos en $P (R | D)$. No está claro cómo haríamos para calcular esto, pero dada la información sobre el conjunto relevante, deberíamos poder calcular $P (D | R)$. Por ejemplo, si tuviéramos información sobre la frecuencia con la que ocurrieron palabras específicas en el conjunto relevante, entonces, dado un nuevo documento, sería relativamente sencillo calcular la probabilidad de ver la combinación de palabras en el documento que ocurre en el documento relevante conjunto. Supongamos que la probabilidad de la palabra ``presidente'' en el conjunto relevante es $0.02$, y la probabilidad de ``Lincoln'' es $0.03$. Si un nuevo documento contiene las palabras ``presidente'' y ``lincoln'', podríamos decir que la probabilidad de observar esa combinación de palabras en el conjunto relevante es $0.02 \times 0.03 = 0.0006$, suponiendo que las dos palabras ocurran independientemente\footnote{Dados dos eventos A y B, la probabilidad conjunta $P (A \cap B)$ es la probabilidad de que ambos eventos ocurran juntos. En general, $P (A \cap B) = P (A | B)\cdot P (B)$. Si A y B son independientes, esto significa que $P (A \cap B) = P (A)\cdot P (B)$.}.
+
+Entonces, ¿cómo el cálculo de $P (D | R)$ nos lleva a la probabilidad de relevancia? Resulta que hay una relación entre $P (R | D)$ y $P (D | R)$ que se expresa mediante la regla de Bayes\footnote{Lleva el nombre de Thomas Bayes, un matemático británico.}:
+
+$$P(R/D) = \frac{P(D|R)\cdot P(R)}{P(D)}$$
+
+
+donde $P (R)$ es la probabilidad de relevancia a priori (en otras palabras, la probabilidad de que un documento sea relevante), y $P (D)$ actúa como una constante de normalización. Dado esto, podemos expresar nuestra regla de decisión de la siguiente manera: clasificar un documento como relevante si $P (D | R)\cdot P (R)> P (D | NR)\cdot P (NR)$. Esto es lo mismo que 
+clasificar un documento como relevante si:
+
+$$\frac{P(D|R)}{P(D|NR)} > \frac{P(NR)}{P(R)}$$
+
+El lado izquierdo de esta ecuación se conoce como la razón de probabilidad(likelihood ratio). En la mayoría de las aplicaciones de clasificación, como el filtrado de spam, el sistema debe decidir a qué clase pertenece el documento para tomar las medidas apropiadas. Para la recuperación de información, un motor de búsqueda solo necesita clasificar los documentos, en lugar de tomar esa decisión (lo cual es difícil). Si usamos la razón de probabilidad(likelihood ratio) como un puntaje, el altamente calificado
+los documentos serán aquellos que tengan una alta probabilidad de pertenecer al conjunto relevante.
+
+Para calcular los puntajes de los documentos, aún debemos decidir cómo obtener valores para $P (D | R)$ y $P (D | NR)$. El enfoque más simple es hacer los mismos supuestos que hicimos en nuestro ejemplo anterior; es decir, representamos documentos como una combinación de palabras y los conjuntos relevantes y no relevantes usando probabilidades de palabras. En este modelo, los documentos se representan como un vector de características binarias, $D = (d_1, d_2,\dots, D_t)$, donde $d_i = 1$ si el término $i$ está presente en el documento, y $0$ en caso contrario. La otra suposición importante que hacemos es la \textit{independencia del término} (también conocida como la suposición \textit{Naïve Bayes}). Esto significa que podemos estimar $P (D | R)$ por el producto de las probabilidades del término individual $\prod_{i = 1}^{t} P (di | R)$ (y de manera similar para $P (D | NR)$). Debido a que este modelo hace suposiciones de independencia de términos y características binarias en los documentos, se conoce como el \textit{modelo de independencia binaria}.
+
+Obviamente, las palabras no aparecen independientemente en el texto. Si la palabra "Microsoft" aparece en un documento, es muy probable que también aparezca la palabra "Windows". Sin embargo, el supuesto de independencia de término es común, ya que generalmente simplifica las matemáticas involucradas en el modelo. Los modelos que permiten alguna forma de dependencia entre términos se analizarán más adelante en este capítulo.
+
+Recuerde que un documento en este modelo es un vector de 1s y 0s que representa la presencia y ausencia de términos. Por ejemplo, si hubiera cinco términos indexados, una de las representaciones del documento podría ser $(1, 0, 0, 1, 1)$, lo que significa que el documento contiene los términos 1, 4 y 5. Para calcular la probabilidad de que ocurra este documento en el conjunto relevante, necesitamos las probabilidades de que los términos sean 1 o 0 en el conjunto relevante. Si $p_i$ es la probabilidad de que aparezca el término $i$ (tiene el valor 1) en un documento del conjunto relevante, entonces la probabilidad de que nuestro documento de ejemplo ocurra en el conjunto relevante es $p_1\times (1 - p_2) \times (1 - p_3) \times p_4 \times p_5$. La probabilidad $(1 - p_2)$ es la probabilidad de que el término 2 no ocurra en el conjunto relevante. Para el conjunto no relevante, usamos si para representar la probabilidad de que ocurra el término $i$\footnote{En muchas descripciones de este modelo, $p_i$ y $q_i$ se usan para estas probabilidades. Usamos si para evitar confusiones con el $q_i$ usado para representar los términos de la consulta.}. Volviendo a la razón de probabilidad, el uso de $p_i$ y $s_i$ nos da una puntuación de
+
+$$\frac{P(D|R)}{P(D|NR)} = \prod_{i:d_i=1}\frac{p_i}{s_i}\cdot \prod_{i:d_i=0}\frac{1-p_i}{1-s_i}$$
+
+donde $\prod_{i: di = 1}$ significa que es un producto sobre los términos que tienen el valor 1 en el documento. Ahora podemos hacer un poco de manipulación matemática para obtener:
+
+$$\prod_{i:d_i=1}\frac{p_i}{s_i}\cdot \left(\prod_{i:d_i=1}\frac{1-p_i}{1-s_i} \cdot \prod_{i:d_i=1}\frac{1-s_i}{1-p_i}\right)\cdot \prod_{i:d_i=0}\frac{1-p_i}{1-s_i}=$$
+
+$$ = \prod_{i:d_i=1}\frac{p_i(1-s_i)}{s_i(1-p_i)}\cdot \prod_{i}\frac{1-p_i}{1-s_i}$$
+
+El segundo producto abarca todos los términos y, por lo tanto, es el mismo para todos los documentos, por lo que podemos ignorarlo para la clasificación. Dado que multiplicar lotes de números pequeños puede generar problemas con la precisión del resultado, podemos utilizar de manera equivalente el logaritmo del producto, lo que significa que la función de puntuación es:
+
+$$\sum_{i:d_i=1}\log{\frac{p_i(1-s_i)}{s_i(1-p_i)}}$$
+
+Tal vez se pregunte a dónde se ha ido la consulta, dado que este es un algoritmo de clasificación de documentos para una consulta específica. En muchos casos, la consulta nos proporciona la única información que tenemos sobre el conjunto relevante. Podemos suponer que, en ausencia de otra información, los términos que no están en la consulta tendrán la misma probabilidad de aparición en los documentos relevantes y no relevantes (es decir, $p_i = s_i$). En ese caso, la suma solo será sobre términos que están tanto en la consulta como en el documento. Esto significa que, dada una consulta, la puntuación de un documento es simplemente la suma de los pesos de los términos para todos los términos coincidentes.
+
+$$\log{\frac{0.5(1-\frac{n_i}{N})}{\frac{n_i}{N}(1-0.5)}}=\log{\frac{N-n_i}{n_i}}$$
+
+donde ni es el número de documentos que contienen el término $i$, y $N$ es el número de documentos en la colección. Esto muestra que, en ausencia de información sobre los documentos relevantes, el término peso derivado del modelo de independencia binario es muy similar a un peso $idf$. No hay componente $tf$, porque se suponía que los documentos tenían características binarias.
+
+Si tenemos información sobre las ocurrencias de términos en los conjuntos relevantes y no relevantes, se puede resumir en una tabla de contingencia, que se muestra en la Tabla \ref{tab:TablaContigencia}. Esta información podría obtenerse a través de comentarios relevantes, donde los usuarios identifican documentos relevantes en las clasificaciones iniciales. En esta tabla, $r_i$ es el número de documentos relevantes que contienen el término $i$, $n_i$ es el número de documentos que contienen el término $i$, $N$ es el número total de documentos en la colección y $R$ es el número de documentos relevantes para esta consulta.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline			
+			 & Relevant & Non-Relevant & Total \\ \hline
+			$d_i=1$ & $r_i$ & $n_i-r_i$ & $n_i$ \\ 
+			$d_i=0$ & $R_i-r_i$ & $N-n_i-R+r_i$ & $N-n_i$ \\ \hline 
+			Total & $R$ & $N-R$ & $N$ \\ \hline
+		\end{tabular}
+	\end{center}
+	\caption{\label{tab:TablaContigencia}Tabla de contingencia de ocurrencias de términos para una consulta particular}
+\end{table}
+
+Dada esta tabla, las estimaciones obvias\footnote{Usamos el término estimación para un valor de probabilidad calculado usando datos como una tabla de contingencia porque este valor es solo una estimación del valor verdadero de la probabilidad y cambiaría si hubiera más datos disponibles.} para $p_i$ y $s_i$ serían $p_i = r_i / R$ (el número de documentos relevantes que contienen un término dividido por el número total de documentos relevantes) y $s_i = (n_i - r_i) / (N - R )$ (el número de documentos no relevantes que contienen un término dividido por el número total de documentos no relevantes). Sin embargo, el uso de estas estimaciones podría causar un problema si algunas de las entradas en la tabla de contingencia fueran ceros. Si $r_i$ fuera cero, por ejemplo, el término peso sería $log{0}$. Para evitar esto, una solución estándar es agregar $0.5$ a cada conteo (y 1 a los totales), lo que nos da estimaciones de $p_i = (ri + 0.5) / (R + 1)$ y $s_i = (ni − ri + 0.5) / (N − R + 1.0)$. Poner estas estimaciones en la función de puntuación nos da:
+
+$$\sum_{i:d_i=q_i=1}\log{\frac{(r_i+0.5)/(R-r_i+0.5)}{(n_i-r_i+0.5)/(N-n_i-R+r_i+0.5)}}$$
+
+Aunque la puntuación de este documento suma ponderaciones de términos solo para los términos de consulta coincidentes, con comentarios relevantes, la consulta se puede ampliar para incluir otros términos importantes del conjunto relevante. Tenga en cuenta que si no tenemos información relevante, podemos establecer $r$ y $R$ en 0, lo que daría un valor de $p_i$ de $0.5$, y produciría el peso del término tipo $idf$ discutido anteriormente.
+
+Entonces, ¿qué tan bueno es el puntaje de este documento cuando se usa para clasificar? No muy bueno, resulta. Aunque proporciona un método para incorporar información relevante, en la mayoría de los casos no tenemos esta información y en su lugar estaríamos utilizando ponderaciones de términos que son similares a las ponderaciones $idf$. La ausencia de un componente $tf$ hace una diferencia significativa en la efectividad de la clasificación, y la mayoría de las medidas de efectividad disminuirán en aproximadamente un $50\%$ si la clasificación ignora esta información. Esto significa, por ejemplo, que podríamos ver un $50\%$ menos de documentos relevantes en los primeros puestos si utilizamos la clasificación del modelo de independencia binaria en lugar de la mejor clasificación $tf\cdot idf$.
+
+Sin embargo, resulta que el modelo de independencia binaria es la base de uno de los algoritmos de clasificación más efectivos y populares, conocido como BM25\footnote{BM significa Best Match, y 25 es solo un esquema de numeración utilizado por Robertson y sus compañeros de trabajo para realizar un seguimiento de las variantes de ponderación (Robertson y Walker, 1994).}.
+
+\subsection{El algoritmo de clasificación BM25}
+
+BM25 extiende la función de puntuación para el modelo de independencia binario para incluir ponderaciones de términos de documentos y consultas. La extensión se basa en argumentos probabilísticos y validación experimental, pero no es un modelo formal.
+
+BM25 ha funcionado muy bien en los experimentos de recuperación de TREC y ha influido en los algoritmos de clasificación de los motores de búsqueda comerciales, incluidos los motores de búsqueda web. Existen algunas variaciones de la función de puntuación para BM25, pero la forma más común es:
+
+$$\sum_{i\in Q}\log{\frac{(r_i+0.5)/(R-r_i+0.5)}{(n_i-r_i+0.5)/(N-n_i-R+r_i+0.5)}}\cdot \frac{(k_1+1)\cdot f_i}{K+f_i}\cdot \frac{(k_2+1)\cdot qf_i}{k_2+qf_i}$$
+
+donde la suma ahora está sobre todos los términos en la consulta; y $N$, $R$, $n_i$ y $r_i$ son los mismos que se describen en la última sección, con la condición adicional de que $r$ y $R$ se establezcan en cero si no hay información relevante; $f_i$ es la frecuencia del término $i$ en el documento; $qf_i$ es la frecuencia del término $i$ en la consulta; y $k_1$, $k_2$ y $K$ son parámetros cuyos valores se establecen empíricamente.
+
+La constante $k_1$ determina cómo cambia el componente $tf$ del término peso a medida que aumenta $f_i$. Si $k_1 = 0$, el término componente de frecuencia se ignoraría y solo importaría el término presencia o ausencia. Si $k_1$ es grande, el término componente de peso aumentaría casi linealmente con $f_i$. En los experimentos TREC, un valor típico para $k_1$ es $1.2$, lo que hace que el efecto de $f_i$ sea muy no lineal, similar al uso de $\log{f}$ en el término ponderaciones discutido en la sección 7.1.2. Esto significa que después de tres o cuatro ocurrencias de un término, las ocurrencias adicionales tendrán poco impacto. La constante $k_2$ tiene un papel similar en el peso del término de consulta. Los valores típicos para este parámetro están en el rango de $0$ a $1,000$, lo que significa que el rendimiento es menos sensible a $k_2$ que a $k_1$. Esto se debe a que las frecuencias de término de consulta son mucho más bajas y menos variables que las frecuencias de término de documento.
+
+$K$ es un parámetro más complicado que normaliza el componente $tf$ por la longitud del documento. Específicamente
+
+$$K = k_1((1-b) + b\cdot \frac{dl}{avdl})$$
+
+donde $b$ es un parámetro, $dl$ es la longitud del documento y $avdl$ es la longitud promedio de un documento en la colección. La constante $b$ regula el impacto de la normalización de la longitud, donde $b = 0$ corresponde a la normalización sin longitud, y $b = 1$ es la normalización completa. En los experimentos TREC, se encontró que un valor de $b = 0.75$ era efectivo.
+
+Como ejemplo de cálculo, consideremos una consulta con dos términos, ``presidente'' y ``lincoln'', cada uno de los cuales ocurre solo una vez en la consulta $(qf = 1)$. Consideraremos el caso típico en el que no tenemos información relevante ($r$ y $R$ son cero). Supongamos que estamos buscando una colección de $500,000$ documentos $(N)$, y que en esta colección, el ``presidente'' ocurre en $40,000$ documentos $(n_1 = 40, 000)$
+y ``lincoln'' aparece en 300 documentos $(n_2 = 300)$. En el documento que estamos anotando (que trata sobre el presidente Lincoln), ``presidente'' ocurre 15 veces $(f_1 = 15)$ y ``lincoln'' ocurre 25 veces $(f_2 = 25)$. La longitud del documento es el $90\%$ de la longitud promedio $(dl / avdl = 0.9)$. Los valores de los parámetros que utilizamos son $k_1 = 1.2$, $b = 0.75$ y $k_2 = 100$. Con estos valores, $K = 1.2 \cdot (0.25 + 0.75 \cdot 0.9) = 1.11$, y la puntuación del documento es:
+
+$$\begin{array}{lll}
+	BM25(Q,D) & = & \log{\frac{(0 + 0.5)/(0 - 0 + 0.5)}{(40000 - 0 + 0.5)/(500000 - 40000 - 0 + 0 + 0.5)}}\times \\
+	\\
+	&  & \times\frac{(1.2 + 1)\cdot 15}{(1.11 + 15)}\times \frac{(100 + 1)\cdot 1}{100 + 1} + \\
+	\\
+	&  & + \log{\frac{(0 + 0.5)/(0 - 0 + 0.5)}{(300 - 0 + 0.5)/(500000 - 300 - 0 + 0 + 0.5)}}\times \\
+	\\
+	&  & \times\frac{(1.2 + 1)\cdot 25}{(1.11 + 25)}\times \frac{(100 + 1)\cdot 1}{100 + 1} \\
+	\\
+	& = & \log{\frac{460000.5}{40000.5}} \cdot \frac{33}{16.11} \cdot \frac{101}{101} + \log{\frac{499700.5}{300.5}} \cdot \frac{55}{26.11} \cdot \frac{101}{101} \\
+	\\
+	& = & 2.44 \cdot 2.05 \cdot + 7.24 \cdot 2.11 \cdot 1 \\
+	& = & 5.00 + 15.66 \\
+	& = &20.66 
+\end{array}$$
+
+Observe el impacto de la primera parte de la ponderación que, sin información relevante, es casi lo mismo que una ponderación $idf$ (como discutimos en la sección 7.2.1). Debido a que el término ``lincoln'' es mucho menos frecuente en la colección, tiene un componente de $idf$ mucho más alto (7.42 versus 2.44). La Tabla \ref{tab:BM25Puntajes} da puntajes para diferentes números de ocurrencias de término. Esto muestra la importancia del término ``Lincoln'' y que incluso una sola aparición de un término puede hacer una gran diferencia en el puntaje. Reducir el número de apariciones de término de 25 o 15 a 1 hace una diferencia significativa pero no dramática. Este ejemplo también demuestra que es posible que un documento que contiene una gran cantidad de apariciones de un solo término importante obtenga una puntuación más alta que un documento que contiene ambos términos de consulta ($15.66$ versus $12.74$).
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{c|c|c}
+			\hline			
+			 Frecuencia de ``presidente'' & Frecuencia de ``lincoln'' & Puntuación BM25 \\ \hline
+			$15$ & $25$ & $20.66$ \\ 
+			$15$ & $1$ & $12.74$ \\  
+			$15$ & $0$ & $5.00$ \\  
+			$1$ & $25$ & $18.2$ \\  
+			$0$ & $25$ & $15.66$ \\ \hline  
+			
+		\end{tabular}
+	\end{center}
+	\caption{\label{tab:BM25Puntajes}Puntajes de BM25 para un documento de ejemplo}
+\end{table}
+
+El cálculo de la puntuación puede parecer complicado, pero recuerde que parte del cálculo de los pesos de los términos puede ocurrir en el momento de la indexación, antes de procesar cualquier consulta. Si no hay información relevante, la calificación de un documento simplemente implica agregar los pesos para que coincidan los términos de la consulta, con un pequeño cálculo adicional si los términos de la consulta ocurren más de una vez (es decir, si $qf > 1$). Otro punto importante es que los valores de los parámetros para el algoritmo de clasificación BM25 pueden ajustarse (es decir, ajustarse para obtener la mejor efectividad) para cada aplicación. El proceso de ajuste se describe más adelante en la sección 7.7 y el Capítulo 8.
+
+Para resumir, BM25 es un algoritmo de clasificación efectivo derivado de un modelo de recuperación de información visto como clasificación. Este modelo se centra en la relevancia tópica y hace una suposición explícita de que la relevancia es binaria. En la siguiente sección, discutimos otro modelo probabilístico que incorpora la frecuencia de término directamente en el modelo, en lugar de agregarse como una extensión para mejorar el rendimiento.
+
+\section{Clasificación basada en modelos de lenguaje}
+
+Los modelos de lenguaje se utilizan para representar texto en una variedad de tecnologías de lenguaje, como reconocimiento de voz, traducción automática y reconocimiento de escritura a mano. La forma más simple de modelo de lenguaje, conocido como modelo de lenguaje de unigrama, es una distribución de probabilidad sobre las palabras en el idioma. Esto significa que el modelo de lenguaje asocia una probabilidad de ocurrencia con cada palabra en el vocabulario in dex para una colección. Por ejemplo, si los documentos en una colección contenían solo cinco palabras diferentes, un posible modelo de idioma para esa colección podría ser $(0.2, 0.1, 0.35, 0.25, 0.1)$, donde cada número es la probabilidad de que ocurra una palabra. Si tratamos cada documento como una secuencia de palabras, entonces las probabilidades en el modelo de lenguaje predicen cuál será la siguiente palabra en la secuencia. Por ejemplo, si las cinco palabras en nuestro idioma fueron ``niña'', ``gato'', ``el'', ``niño'' y ``tocado'', entonces las probabilidades predicen cuál de estas palabras será la siguiente. Estas palabras cubren todas las posibilidades, por lo que las probabilidades deben sumarse a 1. Debido a que este es un modelo de unigrama, las palabras anteriores no tienen impacto en la predicción. Con este modelo, por ejemplo, es tan probable que obtenga la secuencia ``niña gata'' (probabilidad $0.2 \times 0.1$) como ``niña tocada'' (probabilidad $0.2 \times 0.1$).
+
+En aplicaciones como el reconocimiento de voz, se utilizan modelos de lenguaje de \textit{n-gramas} que predicen palabras basadas en secuencias más largas. Un modelo de \textit{n-gramas} predice una palabra basada en las $n - 1$ palabras anteriores. Los modelos de \textit{n-gramas} más comunes son los modelos \textit{bigram} (predicción basada en la palabra anterior) y \textit{trigram} (predicción basada en las dos palabras anteriores). Aunque los modelos \textit{bigram} se han utilizado en la recuperación de información para representar frases de dos palabras (ver sección 4.3.5), centramos nuestra discusión en los modelos unigram porque son más simples y han demostrado ser muy efectivos como base para los algoritmos de clasificación.
+
+Para las aplicaciones de búsqueda, utilizamos modelos de idiomas para representar el contenido temático de un documento. Un tema es algo del que se habla a menudo, pero rara vez se define en las discusiones de recuperación de información. En este enfoque, definimos un tema como una distribución de probabilidad sobre las palabras (en otras palabras, un modelo de lenguaje). Por ejemplo, si un documento trata sobre la pesca en Alaska, esperaríamos ver palabras asociadas con la pesca y ubicaciones en Alaska con altas probabilidades en el modelo de idioma. Si se trata de pescar en Florida, algunas de las palabras de alta probabilidad serán las mismas, pero habrá más palabras de alta probabilidad asociadas con ubicaciones en Florida. Si, en cambio, el documento trata sobre juegos de pesca para computadoras, la mayoría de las palabras de alta probabilidad se asociarán con los fabricantes de juegos y el uso de computadoras, aunque todavía habrá algunas palabras importantes sobre la pesca. Tenga en cuenta que un modelo de lenguaje de tema, o modelo de tema para abreviar, contiene probabilidades para todas las palabras, no solo las más importantes. La mayoría de las palabras tendrán probabilidades "predeterminadas" que serán las mismas para cualquier texto, pero las palabras que son importantes para el tema tendrán probabilidades inusualmente altas.
+
+Se puede usar una representación de modelo de lenguaje de un documento para ``generar'' texto nuevo muestreando palabras de acuerdo con la distribución de probabilidad. Si imaginamos el modelo de lenguaje como un gran grupo de palabras, donde las probabilidades determinan cuántas instancias de una palabra hay en el grupo, entonces podemos generar texto al alcanzar (sin mirar), extraer una palabra, escribirla, volviendo a poner la palabra en el cubo y dibujando de nuevo. Tenga en cuenta que no estamos diciendo que podamos generar el documento original mediante este proceso. De hecho, debido a que solo estamos usando un modelo de unigrama, el texto generado se verá bastante mal, sin estructura sintáctica. Sin embargo, las palabras importantes para el tema del documento aparecerán con frecuencia. Intuitivamente, estamos usando el modelo de lenguaje como un modelo muy aproximado para el tema en el que el autor del documento estaba pensando cuando lo estaba escribiendo.
+
+Cuando el texto se modela como una secuencia finita de palabras, donde en cada punto de la secuencia hay t diferentes palabras posibles, esto corresponde a asumir una distribución multinomial sobre las palabras. Aunque existen alternativas, los modelos de lenguaje multinomial son los más comunes en la recuperación de información\footnote{Discutimos el modelo multinomial en el contexto de clasificación en el Capítulo 9.}. Una de las limitaciones de los modelos multinomiales que se ha señalado es que no describen bien la rotura del texto, que es la observación de que una vez que una palabra es ``extraída fuera del balde'', tiende a extraerse repetidamente.
+
+Además de representar documentos como modelos de lenguaje, también podemos representar el tema de la consulta como un modelo de lenguaje. En este caso, la intuición es que el modelo de lenguaje es una representación del tema que el buscador de información tenía en mente cuando estaba escribiendo la consulta. Esto conduce a tres posibilidades obvias para los modelos de recuperación basados ​​en modelos de lenguaje: uno basado en la probabilidad de generar el texto de la consulta a partir de un modelo de lenguaje de documento, uno basado en la generación del texto del documento a partir de un modelo de lenguaje de consulta y otro basado en la comparación del idioma modelos que representan la consulta y los temas del documento. En las siguientes dos secciones, describimos estos modelos de recuperación con más detalle.
+
+\subsection{Clasificación de probabilidad de consulta(Query Likelihood Ranking)}
+
+En el modelo de recuperación de probabilidad de consulta, clasificamos los documentos según la probabilidad de que el texto del documento pueda generar el texto de la consulta. En otras palabras, calculamos la probabilidad de que podamos extraer las palabras de consulta del "cubo" de palabras que representan el documento. Este es un modelo de relevancia temática, en el sentido de que la probabilidad de generación de consultas es la medida de la probabilidad de que un documento sea sobre el mismo tema que la consulta. Como comenzamos con una consulta, en general nos gustaría calcular $P (D | Q)$ para clasificar los documentos. Usando la regla de Bayes, podemos calcular esto por
+
+$$p(D|Q)\stackrel{\mathrm{rank}}{=}P(Q|D)\cdot P(D)$$
+
+donde el simbolo $\stackrel{\mathrm{rank}}{=}$, como mencionamos anteriormente, significa que el lado derecho es el rango equivalente al lado izquierdo (es decir, podemos ignorar la constante de normalización $P (Q)$), $P (D)$ es la probabilidad previa de un documento, y $P (Q | D)$ es la probabilidad de consulta dada el documento. En la mayoría de los casos, se supone que $P (D)$ es uniforme (igual para todos los documentos) y, por lo tanto, no afectará la clasificación. Los modelos que asignan probabilidades previas no uniformes basadas en, por ejemplo, la fecha del documento o la longitud del documento pueden ser útiles en algunas aplicaciones, pero aquí haremos una suposición uniforme más simple. Dado ese supuesto, el modelo de recuperación especifica los documentos de clasificación por $P (Q | D)$, que calculamos utilizando el modelo de lenguaje de unigrama para el documento
+
+$$P(Q|D) = \prod_{i=1}^{n}P(q_i|D)$$
+
+donde qi es una palabra de consulta, y hay n palabras en la consulta. Para calcular esta puntuación, necesitamos tener estimaciones para las probabilidades del modelo de lenguaje $P (qi | D)$. La estimación obvia sería
+
+$$P(q_i|D) = \frac{f_{qi,D}}{|D|}$$
+
+donde $f_{qi, D}$ es el número de veces que la palabra qi aparece en el documento $D$ y $| D |$ es el número de palabras en $D$. Para una distribución multinomial, esta es la \textit{estimación(likelihood) de máxima} verosimilitud, lo que significa que esta es la estimación que hace que el valor observado de fqi; D sea más probable. El principal problema con esta estimación es que si falta alguna de las palabras de consulta en el documento, la puntuación dada por el modelo de probabilidad de consulta para $P (Q | D)$ será cero. Esto claramente no es apropiado para consultas más largas. Por ejemplo, perder una palabra de seis no debería producir una puntuación de cero. Tampoco podremos distinguir entre documentos que faltan diferentes números de palabras de consulta. Además, debido a que estamos creando un modelo de tema para un documento, las palabras asociadas con ese tema deberían tener alguna probabilidad de ocurrir, incluso si no se mencionaron en el documento. Por ejemplo, un modelo de lenguaje que representa un documento sobre juegos de computadora debería tener alguna probabilidad distinta de cero para la palabra ``RPG'', incluso si esa palabra no se menciona en el documento. Una pequeña probabilidad para esa palabra permitirá que el documento reciba un puntaje distinto de cero para la consulta ``juegos de computadora RPG'', aunque será menor que el puntaje para un documento que contenga las tres palabras.
+
+El \textit{suavizado(Smootbind)} es una técnica para evitar este problema de estimación y superar la escasez de datos, lo que significa que generalmente no tenemos grandes cantidades de texto para usar para las estimaciones de probabilidad del modelo de lenguaje. El enfoque general para suavizar es reducir (o descontar) las estimaciones de probabilidad de las palabras que se ven en el texto del documento, y asignar esa probabilidad ``sobrante'' a las estimaciones de las palabras que no se ven en el texto. Las estimaciones de palabras no vistas se basan generalmente en la frecuencia de aparición de palabras en toda la colección de documentos. Si $P (qi | C)$ es la probabilidad de la palabra de consulta i en el \textit{modelo de lenguaje de colección} para la colección de documentos C, entonces la estimación que usamos para una palabra invisible en un documento es $\alpha_D P (qi | C)$, donde $\alpha_D$ es un coeficiente que controla la probabilidad asignado a palabras invisibles\footnote{La probabilidad del modelo del idioma de recopilación también se conoce como la probabilidad del modelo del idioma de fondo, o simplemente la probabilidad de fondo.}. En general, $\alpha_D$ puede depender del documento. Para que las probabilidades sumen uno, la probabilidad estimada para una palabra que se ve en un documento es $(1 - \alpha_D) P (qi | D) + \alpha_D P (q_i | C)$.
+
+Para aclarar esto, considere un ejemplo simple donde solo hay tres palabras, $w_1$, $w_2$ y $w_3$, en nuestro vocabulario índice. Si las probabilidades de recopilación para estas tres palabras, basadas en estimaciones de máxima verosimilitud, son $0.3$, $0.5$ y $0.2$, y las probabilidades del documento basadas en estimaciones de máxima verosimilitud son $0.5$, $0.5$ y $0.0$, entonces las estimaciones de probabilidad \textit{suavizadas(smootbed)} para el modelo de lenguaje del documento son:
+
+$$
+\begin{array}{lll}
+	P(w_1|D) & = & (1-\alpha_D)\cdot P(w_1|D) + \alpha_D P(w_1|C) \\
+	& = & (1-\alpha_D)\cdot 0.5 + \alpha_D \cdot 0.3 \\
+	P(w_2|D) & = & (1-\alpha_D)\cdot 0.5 + \alpha_D \cdot 0.5 \\
+	P(w_3|D) & = & (1-\alpha_D)\cdot 0.0 + \alpha_D \cdot 0.2 \\
+	& = & \alpha_D \cdot 0.2\\
+\end{array}
+$$
+
+Tenga en cuenta que el término w3 tiene una estimación de probabilidad distinta de cero, a pesar de que no aparece en el texto del documento. Si sumamos estas tres probabilidades, obtenemos
+
+$$
+\begin{array}{lll}
+	P(w_1|D) + P(w_3|D) + P(w_3|D)  & = & (1-\alpha_D)\cdot (0.5 + 0.5) + \alpha_D \cdot (0.3 + 0.5) \\
+	& = & 1-\alpha_D + \alpha_D \\
+	& = & 1 \\	
+\end{array}
+$$
+
+lo que confirma que las probabilidades son consistentes.
+
+Las diferentes formas de estimación resultan de especificar el valor de $\alpha_D$. La opción más simple sería establecerlo en una constante, es decir, $\alpha_D = \lambda$. La estimación de probabilidad del modelo de lenguaje de recopilación que utilizamos para la palabra $q_i$ es $c_{q_i} / | C |$, donde $c_{q_i}$ es el número de veces que aparece una palabra de consulta en la recopilación de documentos, y $| C |$ es el número total de apariciones de palabras en la colección. Esto nos da una estimación para $P (q_i | D)$ de:
+
+$$p(q_i|D) = (1 - \lambda)\frac{f_{q_{i,D}}}{|D|} + \lambda\frac{c_{q_{i}}}{|C|}$$
+
+Esta forma de suavizado se conoce como el método Jelinek-Mercer. Al sustituir esta estimación en el puntaje del documento por el modelo de probabilidad de consulta, se obtiene:
+
+$$P(Q|D) =\prod_{i=1}^{n}{((1 - \lambda)\frac{f_{q_{i,D}}}{|D|} + \lambda\frac{c_{q_{i}}}{|C|})} $$
+
+Como hemos dicho antes, dado que multiplicar muchos números pequeños juntos puede conducir a problemas de precisión, podemos usar logaritmos para convertir esta puntuación en una suma equivalente al rango de la siguiente manera:
+
+$$\log{P(Q|D)} =\sum_{i=1}^{n}\log{((1 - \lambda)\frac{f_{q_{i,D}}}{|D|} + \lambda\frac{c_{q_{i}}}{|C|})} $$
+
+Los valores pequeños de $\lambda$ producen menos suavizado y, en consecuencia, la consulta tiende a actuar más como un booleano Y ya que la ausencia de cualquier palabra de consulta penalizará sustancialmente la puntuación. Además, la ponderación relativa de las palabras, medida por las estimaciones de máxima verosimilitud, será importante para determinar la puntuación. A medida que $\lambda$ se aproxima a $1$, la ponderación relativa será menos importante, y la consulta actúa más como un OR booleano o una coincidencia de nivel de coordinación\footnote{Una coincidencia de nivel de coordinación simplemente clasifica los documentos por el número de términos de consulta coincidentes.}. En las evaluaciones de TREC, se ha demostrado que los valores de $\lambda$ alrededor de $0.1$ funcionan bien para consultas cortas, mientras que valores alrededor de $0.7$ son mejores para consultas mucho más largas. Las consultas cortas tienden a contener solo palabras significativas, y un valor $\lambda$ bajo favorecerá a los documentos que contienen todas las palabras de consulta. Con consultas mucho más largas, perder una palabra es mucho menos importante, y una $\lambda$ alta pone más énfasis en los documentos que contienen varias palabras de alta probabilidad.
+
+En este punto, se le puede ocurrir que el modelo de recuperación de probabilidad de consulta no tiene nada que parezca un peso $tf\cdot idf$ y, sin embargo, los experimentos muestran que es tan efectivo como el algoritmo de clasificación BM25. Sin embargo, podemos demostrar una relación con los pesos tf.idf manipulando la puntuación de probabilidad de consulta de la siguiente manera:
+
+$$
+\begin{array}{lll}
+
+	\log{P(Q|D)} & = & \sum_{i=1}^{n}\log{((1 - \lambda)\frac{f_{q_{i,D}}}{|D|} + \lambda\frac{c_{q_{i}}}{|C|})} \\
+	
+	& = & \sum_{i:f_{q_{i,D}>0}}\log{((1 - \lambda)\frac{f_{q_{i,D}}}{|D|} + \lambda\frac{c_{q_{i}}}{|C|})} + \sum_{i:f_{q_{i,D}=0}}\log{(\lambda\frac{c_{q_{i}}}{|C|})} \\
+	& = & \sum_{i:f_{q_{i,D}>0}}\log{\frac{((1 - \lambda)\frac{f_{q_{i,D}}}{|D|} + \lambda\frac{c_{q_{i}}}{|C|})}{\lambda\frac{c_{q_{i}}}{|C|}}} + \sum_{i=1}^{n}\log{(\lambda\frac{c_{q_{i}}}{|C|})} \\
+	& \stackrel{\mathrm{rank}}{=} & \sum_{i:f_{q_{i,D}>0}}\log{\left(\frac{(1 - \lambda)\frac{f_{q_{i,D}}}{|D|} }{\lambda\frac{c_{q_{i}}}{|C|}} + 1 \right)}  \\
+	
+\end{array}
+$$
+
+En la segunda línea, dividimos el puntaje en las palabras que aparecen en el documento y las que no aparecen $(f_{q_{i,D}=0})$. En la tercera línea, agregamos
+
+$$\sum_{i:f_{q_{i,D}>0}}\log{(\lambda\frac{c_{q_{i}}}{|C|})}$$
+
+al último término y restarlo del primero (donde termina en el denominador), por lo que no hay efecto neto. El último término ahora es el mismo para todos los documentos y puede ignorarse para la clasificación. La expresión final proporciona la puntuación del documento en términos de ``peso'' para los términos de consulta coincidentes. Aunque este peso no es idéntico al peso $tf\cdot idf$, existen claras similitudes en que es directamente proporcional a la frecuencia del término del documento e inversamente proporcional a la frecuencia de recopilación.
+
+Una forma diferente de estimación, y que generalmente es más efectiva, proviene del uso de un valor de αD que depende de la longitud del documento. Este enfoque se conoce como suavizado de Dirichlet, por razones que discutiremos más adelante, y utiliza
+
+$$\alpha_D = \frac{\mu}{|D| + \mu}$$
+
+donde μ es un parámetro cuyo valor se establece empíricamente. Al sustituir esta expresión por $\alpha_D$ en $(1 - \alpha_D) P (q_i | D) + \alpha_D P (q_i | C)$ se obtiene la fórmula de estimación de probabilidad
+
+$$p(q_i|D) = \frac{f_{q_i,D} + \mu\frac{c_{q_i}}{|C|}}{|D| + \mu}$$
+
+que a su vez conduce a la siguiente puntuación de documento:
+
+$$\log{P(Q|D)} = \sum_{i=1}^{n}\log{\frac{f_{q_i,D} + \mu\frac{c_{q_i}}{|C|}}{|D| + \mu}}$$
+
+Similar al suavizado de Jelinek-Mercer, los valores pequeños del parámetro ($\mu$ en este caso) le dan más importancia al peso relativo de las palabras, y los valores grandes favorecen el número de términos coincidentes. Los valores típicos de $\mu$ que logran los mejores resultados en los experimentos TREC están en el rango de $1,000$ a $2,000$ (recuerde que las probabilidades de recolección son muy pequeñas), y el suavizado de Dirichlet es generalmente más efectivo que Jelinek-Mercer, especialmente para las consultas cortas que son comunes en La mayoría de las aplicaciones de búsqueda.
+
+Entonces, ¿de dónde viene el suavizado Dirichlet? Resulta que una distribución de Dirichlet\footnote{Lleva el nombre del matemático alemán Johann Peter Gustav Lejeune Dirichlet (el primer nombre utilizado parece variar).} es la forma natural de especificar el conocimiento previo al estimar las probabilidades en una distribución multinomial. El proceso de estimación bayesiana determina estimaciones de probabilidad basadas en este conocimiento previo y el texto observado. La estimación de probabilidad resultante se puede ver como la combinación de conteos de palabras reales del texto con pseudo-conteos de la distribución de Dirichlet. Si no tuviéramos texto, la estimación de probabilidad para el término qi sería $\mu (c_{q_i} / | C |) / \mu$, que es una suposición razonable basada en la colección. Cuanto más texto tengamos (es decir, para documentos más largos), menos influencia tendrá el conocimiento previo.
+
+Podemos demostrar el cálculo de las puntuaciones de los documentos de probabilidad de consulta utilizando el ejemplo dado en la sección 7.2.2. Los dos términos de consulta son ``presidente'' y ``Lincoln''. Para el término ``presidente'', $f_{q_{i}, D = 15}$, y supongamos que $c_{q_i} = 160,000$. Para el término ``lincoln'', $f_{q_{i}, D = 15}$, y asumiremos que $c_{q_i} = 2,400$. El número de apariciones de palabras en el documento $| d |$ se supone que son $1,800$, y el número de apariciones de palabras en la colección es 109 ($500,000$ documentos multiplicado por un promedio de $2,000$ palabras). El valor de $\mu$ utilizado es $2,000$. Dados estos números, la puntuación para el documento es:
+
+$$
+\begin{array}{lll}
+	QL(Q,D) & = & \log{\frac{15 + 2000 \times (1.6 \times 10^5/10^9)}{1800 + 2000}} + \log{\frac{25 + 2000 \times (2400 \times 10^5/10^9)}{1800 + 2000}}\\
+	        & = &  \log{(15.32/3800)} + \log{(25.005/3800)}\\
+	        & = &  -5.51 +-5.03\\
+	        & = &  -10.53\\
+\end{array}
+$$
+
+Un numero negativo? Recuerde que estamos tomando logaritmos de probabilidades en esta función de puntuación, y las probabilidades de aparición de palabras son pequeñas. La cuestión importante es la efectividad de las clasificaciones producidas utilizando estos puntajes. La Tabla 7.3 muestra los puntajes de probabilidad de consulta para las mismas variaciones de ocurrencias de términos que se usaron en la Tabla 7.2. Aunque los puntajes se ven muy diferentes para $BM25$ y $QL$, las clasificaciones son similares, con la excepción de que el documento que contiene 15 ocurrencias de ``presidente'' y 1 de ``Lincoln'' se clasifica más alto que el documento que contiene 0 ocurrencias de ``presidente'' y 25 ocurrencias de ``Lincoln'' en las puntuaciones de $QL$, mientras que lo contrario es cierto para $BM25$.
+
